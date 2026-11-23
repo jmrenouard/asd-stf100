@@ -1,49 +1,101 @@
 site_name: ASD-STF100 — Français Technique Simplifié
 site_description: Norme ouverte de rédaction technique contrôlée, linter STF, architecture Diátaxis FR et chaîne Docs-as-Code
+site_url: https://asd-stf100.lightpath.fr/
+repo_name: jmrenouard/asd-stf100
 repo_url: https://github.com/jmrenouard/asd-stf100
+edit_uri: edit/main/docs/
+copyright: Copyright &copy; 2026 Jean-Marie Renouard &middot; LightPath
+
 docs_dir: docs
+exclude_docs: |
+  *.kdbx
+  *.keyx
+  *.log
+  .env
+  .env.*
+
+hooks:
+  - scripts/mkdocs_hooks.py
 
 theme:
   name: material
   language: fr
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.indexes
     - navigation.top
+    - navigation.tracking
+    - navigation.footer
     - search.suggest
     - search.highlight
+    - search.share
     - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
   palette:
-    - scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: indigo
       accent: cyan
       toggle:
         icon: material/brightness-7
         name: Passer au mode sombre
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: indigo
       accent: cyan
       toggle:
         icon: material/brightness-4
         name: Passer au mode clair
 
+plugins:
+  - search:
+      lang: fr
+
+extra:
+  version:
+    provider: mike
+    default: latest
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jmrenouard/asd-stf100
+      name: ASD-STF100 sur GitHub
+    - icon: fontawesome/solid/globe
+      link: https://www.lightpath.fr
+      name: LightPath
+
+extra_css:
+  - stylesheets/extra.css
+
 markdown_extensions:
   - admonition
   - attr_list
   - def_list
   - footnotes
+  - md_in_html
   - tables
   - toc:
       permalink: true
   - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 nav:
   - Accueil: index.md
@@ -58,6 +110,7 @@ nav:
       - Migrer une documentation vers Diátaxis: 02-guides-pratiques/migrer-documentation-diataxis.md
       - Configurer la CI Docs-as-Code: 02-guides-pratiques/configurer-ci-docs-as-code.md
       - Générer le PDF de spécification: 02-guides-pratiques/generer-pdf-specification.md
+      - Publier la documentation sur IONOS: 02-guides-pratiques/publier-documentation-ionos.md
   - Référence:
       - 03-reference/index.md
       - Règles de rédaction (53 règles + GR): 03-reference/regles-redaction.md
@@ -70,3 +123,9 @@ nav:
       - Principes fondamentaux d'ASD-STF100: 04-explications/principes-asd-stf100.md
       - Méthodologie Diátaxis et Docs-as-Code: 04-explications/methodologie-diataxis-et-docs-as-code.md
       - ADR-001 — Adaptation française d'ASD-STE100: 04-explications/adr-001-adaptation-francaise.md
+      - ADR-002 — Publication MkDocs versionnée sur IONOS: 04-explications/adr-002-publication-mkdocs-versionnee.md
+  - Versions et gouvernance:
+      - Présentation générale: overview.md
+      - Journal des modifications: CHANGELOG.md
+      - Guide de contribution: CONTRIBUTING.md
+      - Mentions légales et licences: NOTICE.md

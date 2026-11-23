@@ -11,6 +11,8 @@ la méthodologie documentaire **Diátaxis (FR)** et les décisions d'architectur
   Guide complet en français des deux axes, des quatre quadrants, du maillage et de la chaîne CI.
 - [ADR-001 — Adaptation française d'ASD-STE100](adr-001-adaptation-francaise.md) —
   Décision d'architecture sur la source unique JSON, la séparation juridique et les outils Python.
+- [ADR-002 — Publication MkDocs versionnée sur IONOS](adr-002-publication-mkdocs-versionnee.md) —
+  Décision d'architecture sur la compilation multi-versions, les hooks MkDocs et le déploiement SFTP IONOS.
 
 ## Quadrants associés
 
