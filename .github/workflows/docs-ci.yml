@@ -1,0 +1,60 @@
+name: Documentation CI
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - ".vale.ini"
+      - ".vale/**"
+      - ".markdownlint.json"
+      - ".github/workflows/docs-ci.yml"
+      - "src/asd_stf100/**"
+  pull_request:
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - ".vale.ini"
+      - ".vale/**"
+      - ".markdownlint.json"
+      - ".github/workflows/docs-ci.yml"
+      - "src/asd_stf100/**"
+
+jobs:
+  docs-quality:
+    name: Validate Diataxis FR, STF, Lint, and MkDocs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install package and MkDocs Material
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e . mkdocs-material
+
+      - name: Validate French Diataxis structure, links, governance, and STF
+        run: python -m asd_stf100.diataxis_check_fr docs --strict --check-stf
+
+      - name: Run markdownlint
+        uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          globs: |
+            docs/**/*.md
+          config: .markdownlint.json
+
+      - name: Run Vale French STF100 checks
+        uses: errata-ai/vale-action@v2
+        with:
+          files: docs/02-guides-pratiques
+          fail_on_error: true
+
+      - name: Build MkDocs site in strict mode
+        run: mkdocs build --strict

@@ -1,0 +1,19 @@
+extends: existence
+message: "Locution lourde ou redondante détectée : '%s'. Utilisez un verbe direct à l'impératif."
+level: warning
+ignorecase: true
+tokens:
+  - afin de
+  - en vue de
+  - dans le but de
+  - au niveau de
+  - par le biais de
+  - préalablement à
+  - procéder à
+  - effectuer un
+  - effectuer une
+  - à l'aide de
+  - vous devez
+  - il faut
+  - il convient de
+  - il est nécessaire de

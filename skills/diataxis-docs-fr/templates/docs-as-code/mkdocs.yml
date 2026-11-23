@@ -1,0 +1,56 @@
+site_name: Documentation Technique
+site_description: Documentation d'architecture et d'exploitation structurée avec Diátaxis (FR)
+docs_dir: docs
+
+theme:
+  name: material
+  language: fr
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Passer au mode sombre
+    - scheme: slate
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Passer au mode clair
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Accueil: index.md
+  - Tutoriels:
+      - 01-tutoriels/index.md
+  - Guides pratiques:
+      - 02-guides-pratiques/index.md
+  - Référence:
+      - 03-reference/index.md
+  - Explications:
+      - 04-explications/index.md

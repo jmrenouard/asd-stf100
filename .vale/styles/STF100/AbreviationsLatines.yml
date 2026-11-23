@@ -1,0 +1,10 @@
+extends: existence
+message: "Abréviation latine déconseillée : '%s' (GR-6). Écrivez l'expression complète en français."
+level: warning
+ignorecase: true
+nonword: true
+tokens:
+  - '\be\.g\.'
+  - '\bi\.e\.'
+  - '\betc\.'
+  - '\bcf\.'
