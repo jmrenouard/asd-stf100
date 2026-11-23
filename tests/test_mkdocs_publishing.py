@@ -631,6 +631,7 @@ def test_mkdocs_hooks_on_files_excludes_secrets_and_injects_virtual_docs(tmp_pat
             "docs_dir": str(docs_dir),
             "site_dir": str(site_dir),
             "use_directory_urls": True,
+            "plugins": _AttrDict({"_current_plugin": None}),
         }
     )
     initial_files = Files(
