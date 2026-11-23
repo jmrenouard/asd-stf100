@@ -370,10 +370,19 @@ def test_root_docs_as_code_configs_valid() -> None:
 
     vale_raw = (REPO_ROOT / ".vale.ini").read_text(encoding="utf-8")
     parser = configparser.ConfigParser()
-    parser.read_string("[DEFAULT]\n" + vale_raw)
+    parser.read_string("[CORE]\n" + vale_raw)
+    assert parser["CORE"]["MinAlertLevel"] == "suggestion"
     assert "docs/02-guides-pratiques/**/*.md" in parser.sections()
-    assert parser["docs/02-guides-pratiques/**/*.md"]["MinAlertLevel"] == "error"
-    assert "STF100" in parser["docs/02-guides-pratiques/**/*.md"]["BasedOnStyles"]
+    howto_vale = parser["docs/02-guides-pratiques/**/*.md"]
+    assert "MinAlertLevel" not in howto_vale
+    assert "STF100" in howto_vale["BasedOnStyles"]
+    for stf_rule in (
+        "STF100.AbreviationsLatines",
+        "STF100.LocutionsLourdes",
+        "STF100.ModauxInterdits",
+        "STF100.PointVirgule",
+    ):
+        assert howto_vale[stf_rule] == "error"
 
     vale_rules = [
         "ModauxInterdits.yml",
