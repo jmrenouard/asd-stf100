@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "asd-stf100"
+version = "1.0.0"
+description = "ASD-STF100: Open-source Simplified Technical French specification, Python linter, and French Diataxis Docs-as-Code toolkit."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+  {name = "jmrenouard"},
+]
+keywords = [
+  "controlled-language",
+  "simplified-technical-french",
+  "asd-stf100",
+  "diataxis",
+  "documentation",
+  "linter",
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Natural Language :: French",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Documentation",
+  "Topic :: Text Processing :: Linguistic",
+]
+dependencies = []
+
+[project.optional-dependencies]
+pdf = ["reportlab>=4.0"]
+dev = ["pytest>=8.0", "pymupdf>=1.24"]
+
+[project.urls]
+Homepage = "https://github.com/jmrenouard/asd-stf100"
+Repository = "https://github.com/jmrenouard/asd-stf100"
+Issues = "https://github.com/jmrenouard/asd-stf100/issues"
+
+[project.scripts]
+stf-check = "asd_stf100.stf_check:main"
+diataxis-fr-scaffold = "asd_stf100.scaffold_diataxis_fr:main"
+diataxis-fr-check = "asd_stf100.diataxis_check_fr:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

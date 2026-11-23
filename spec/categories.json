@@ -1,0 +1,533 @@
+{
+  "technical_noun_categories": [
+    {
+      "id": 1,
+      "title": "Pièces et composants officiels",
+      "description": "Éléments matériels nommés dans les nomenclatures, catalogues ou plans d'ingénierie.",
+      "examples": [
+        "boulon",
+        "condensateur",
+        "connecteur",
+        "filtre",
+        "joint",
+        "interrupteur",
+        "vanne"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Véhicules, machines et leurs emplacements",
+      "description": "Engins, appareils, châssis industriels et zones structurelles associées.",
+      "examples": [
+        "aéronef",
+        "cabine",
+        "compartiment moteur",
+        "baie serveur",
+        "châssis",
+        "remorque"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Outillage, équipements de soutien et leurs pièces",
+      "description": "Outils de maintenance, bancs de test, instruments de mesure et accessoires.",
+      "examples": [
+        "clé dynamométrique",
+        "multimètre",
+        "pince à sertir",
+        "manomètre",
+        "support",
+        "établi"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Matériaux, consommables et contaminants",
+      "description": "Matières premières, produits consommables, fluides industriels et polluants indésirables.",
+      "examples": [
+        "acide",
+        "adhésif",
+        "débris",
+        "graisse",
+        "liquide de refroidissement",
+        "mastic",
+        "poussière",
+        "solvant"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Installations, infrastructures et logistique",
+      "description": "Bâtiments, zones techniques, manutention, emballage, expédition et stockage.",
+      "examples": [
+        "atelier",
+        "bâtiment",
+        "centre de données",
+        "emballage",
+        "entrepôt",
+        "hangar",
+        "quai"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Systèmes, circuits, configurations et sous-ensembles",
+      "description": "Ensembles fonctionnels, architectures matérielles, boucles et modes opérationnels.",
+      "examples": [
+        "alimentation",
+        "boucle de refroidissement",
+        "climatisation",
+        "mode veille",
+        "pare-feu",
+        "pompe"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Termes mathématiques, scientifiques, d'ingénierie et formules",
+      "description": "Grandeurs physiques, propriétés mesurables, lois mathématiques et formules.",
+      "examples": [
+        "capacité",
+        "couple",
+        "densité",
+        "diamètre",
+        "latence",
+        "pression",
+        "résistance",
+        "tension"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Termes de navigation et notions géographiques",
+      "description": "Repères spatiaux, orientations cardinales, itinéraires et zones géographiques.",
+      "examples": [
+        "altitude",
+        "azimut",
+        "est",
+        "latitude",
+        "nord",
+        "point de cheminement",
+        "sous-réseau"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Nombres, unités de mesure et durées",
+      "description": "Valeurs quantitatives, unités du Système international et intervalles de temps.",
+      "examples": [
+        "10 °C",
+        "20 kg",
+        "5 ms",
+        "800 kPa",
+        "100 Mo",
+        "heure",
+        "seconde"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Textes littéraux affichés (boutons, plaques et écrans)",
+      "description": "Libellés exacts et non traduisibles d'interfaces, boutons, voyants et plaques.",
+      "examples": [
+        "bouton ARRÊT",
+        "panneau SORTIE",
+        "voyant DÉFAUT",
+        "position MARCHE",
+        "Enregistrer"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Rôles professionnels, personnes, organisations et entités",
+      "description": "Métiers, fonctions, individus, organismes normatifs et entités géopolitiques.",
+      "examples": [
+        "administrateur",
+        "équipage",
+        "opérateur",
+        "technicien",
+        "ISO",
+        "Union européenne"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Parties du corps humain",
+      "description": "Éléments anatomiques mentionnés dans les consignes de sécurité ou d'ergonomie.",
+      "examples": [
+        "main",
+        "œil",
+        "oreille",
+        "peau",
+        "poumons",
+        "voies respiratoires"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Effets personnels, aliments et boissons",
+      "description": "Équipements vestimentaires courants et denrées alimentaires ou boissons.",
+      "examples": [
+        "chaussures",
+        "eau",
+        "gants",
+        "lunettes",
+        "vêtements"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Termes médicaux et symptômes cliniques",
+      "description": "Symptômes physiologiques, affections médicales et termes d'hygiène clinique.",
+      "examples": [
+        "allergie",
+        "brûlure",
+        "irritation",
+        "mal de tête",
+        "pouls",
+        "respiration",
+        "vertige"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Documents officiels, sections, normes et registres",
+      "description": "Types de manuels, rubriques structurelles, référentiels et journaux d'exploitation.",
+      "examples": [
+        "annexe",
+        "bulletin technique",
+        "chapitre",
+        "fiche de contrôle",
+        "journal de bord",
+        "manuel",
+        "tableau"
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Conditions environnementales et météorologiques",
+      "description": "Paramètres climatiques et états physiques du milieu environnant.",
+      "examples": [
+        "brouillard",
+        "foudre",
+        "givre",
+        "humidité",
+        "lumière du jour",
+        "pluie",
+        "vent"
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Couleurs",
+      "description": "Noms de couleurs employés pour repérer des câbles, voyants ou marquages (sans comparatif).",
+      "examples": [
+        "blanc",
+        "bleu cyan",
+        "gris",
+        "jaune",
+        "noir",
+        "orange",
+        "rouge",
+        "vert"
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Termes d'avarie, défauts et dégradations",
+      "description": "Modes de défaillance matérielle, défauts de surface et usures localisées.",
+      "examples": [
+        "corrosion",
+        "déformation",
+        "érosion",
+        "fissure",
+        "frottement",
+        "rayure",
+        "tache"
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Informatique, réseaux, télécommunications et IA",
+      "description": "Concepts logiciels, infrastructure cloud, cybersécurité et intelligence artificielle.",
+      "examples": [
+        "API",
+        "authentification",
+        "base de données",
+        "chiffrement",
+        "conteneur",
+        "interface",
+        "journal",
+        "mémoire",
+        "modèle de langage",
+        "pare-feu",
+        "réseau",
+        "sauvegarde"
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Opérations civiles et militaires, support et cycle de vie",
+      "description": "Déploiement opérationnel, maintien en condition opérationnelle et gestion du cycle de vie.",
+      "examples": [
+        "cycle de vie",
+        "déploiement",
+        "évacuation",
+        "mission",
+        "obsolescence",
+        "point de contrôle",
+        "prestataire",
+        "utilisateur final"
+      ]
+    },
+    {
+      "id": 21,
+      "title": "Droit, contrats et réglementation",
+      "description": "Notions juridiques, clauses contractuelles, garanties et exigences réglementaires.",
+      "examples": [
+        "arbitrage",
+        "conformité",
+        "contrat",
+        "dérogation",
+        "garantie",
+        "juridiction",
+        "loi",
+        "règlement",
+        "responsabilité"
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Animaux, plantes et autres organismes vivants",
+      "description": "Espèces biologiques mentionnées dans les notices environnementales ou sanitaires.",
+      "examples": [
+        "bactérie",
+        "champignon",
+        "insecte",
+        "mousse",
+        "oiseau",
+        "plante",
+        "rongeur"
+      ]
+    }
+  ],
+  "technical_verb_categories": [
+    {
+      "id": 1,
+      "title": "Procédés de fabrication et d'usinage",
+      "description": "Verbes décrivant des opérations industrielles de transformation, assemblage, traitement thermique ou finition de surface.",
+      "subcategories": [
+        {
+          "code": "a",
+          "title": "Fabrication, usinage, assemblage et traitement",
+          "examples": [
+            "aléser",
+            "braser",
+            "chanfreiner",
+            "coller",
+            "découper",
+            "emboutir",
+            "extruder",
+            "forger",
+            "fraiser",
+            "isoler",
+            "meuler",
+            "mouler",
+            "passiver",
+            "percer",
+            "plaquer",
+            "polir",
+            "recuire",
+            "sertir",
+            "souder",
+            "tarauder",
+            "tremper",
+            "usiner"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Traitements informatiques et applications",
+      "description": "Verbes spécialisés pour l'interaction avec les interfaces logicielles et l'administration des systèmes.",
+      "subcategories": [
+        {
+          "code": "a",
+          "title": "Saisie et interaction utilisateur",
+          "examples": [
+            "balayer",
+            "cliquer",
+            "numériser",
+            "saisir",
+            "taper",
+            "toucher"
+          ]
+        },
+        {
+          "code": "b",
+          "title": "Interface et applications",
+          "examples": [
+            "afficher",
+            "agrandir",
+            "annuler",
+            "cocher",
+            "coller",
+            "copier",
+            "couper",
+            "décocher",
+            "défiler",
+            "désactiver",
+            "effacer",
+            "enregistrer",
+            "filtrer",
+            "glisser",
+            "minimiser",
+            "naviguer",
+            "ouvrir",
+            "réduire",
+            "supprimer",
+            "trier",
+            "valider",
+            "zoomer"
+          ]
+        },
+        {
+          "code": "c",
+          "title": "Opérations système et réseau",
+          "examples": [
+            "amorcer",
+            "archiver",
+            "chiffrer",
+            "compiler",
+            "configurer",
+            "déboguer",
+            "déchiffrer",
+            "déployer",
+            "exécuter",
+            "formater",
+            "installer",
+            "journaliser",
+            "mettre à jour",
+            "redémarrer",
+            "sauvegarder",
+            "télécharger",
+            "téléverser",
+            "traiter"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Instructions propres à un domaine spécialisé",
+      "description": "Verbes métier employés uniquement lorsque les verbes généraux du dictionnaire ne suffisent pas dans le domaine visé.",
+      "subcategories": [
+        {
+          "code": "a",
+          "title": "Ingénierie, mathématiques et sciences",
+          "examples": [
+            "compenser",
+            "convertir",
+            "détecter",
+            "flotter",
+            "moduler",
+            "rayonner",
+            "transformer"
+          ]
+        },
+        {
+          "code": "b",
+          "title": "Domaine médical",
+          "examples": [
+            "aseptiser",
+            "désinfecter",
+            "intuber",
+            "opérer",
+            "prescrire",
+            "stériliser"
+          ]
+        },
+        {
+          "code": "c",
+          "title": "Opérations civiles et militaires",
+          "examples": [
+            "armer",
+            "charger",
+            "décharger",
+            "détecter",
+            "désamorcer",
+            "inhiber",
+            "intercepter",
+            "viser"
+          ]
+        },
+        {
+          "code": "d",
+          "title": "Navigation",
+          "examples": [
+            "approcher",
+            "atterrir",
+            "dévier",
+            "naviguer",
+            "rouler au sol",
+            "stationner en vol",
+            "voler"
+          ]
+        },
+        {
+          "code": "e",
+          "title": "Automobile et ferroviaire",
+          "examples": [
+            "accélérer",
+            "atteler",
+            "braquer",
+            "dételer",
+            "freiner",
+            "gonfler",
+            "stationner"
+          ]
+        },
+        {
+          "code": "f",
+          "title": "Énergie, pétrole et gaz",
+          "examples": [
+            "comprimer",
+            "distiller",
+            "émettre",
+            "extraire",
+            "forer",
+            "injecter",
+            "pomper"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Droit et réglementation",
+      "description": "Verbes utilisés strictement dans les clauses contractuelles, mentions légales et exigences de conformité.",
+      "subcategories": [
+        {
+          "code": "a",
+          "title": "Obligations légales, contractuelles et conformité",
+          "examples": [
+            "appliquer",
+            "attester",
+            "décrire",
+            "déroger",
+            "informer",
+            "modifier",
+            "notifier",
+            "omettre",
+            "réglementer",
+            "remplacer",
+            "respecter",
+            "signer",
+            "statuer"
+          ]
+        }
+      ]
+    }
+  ]
+}
