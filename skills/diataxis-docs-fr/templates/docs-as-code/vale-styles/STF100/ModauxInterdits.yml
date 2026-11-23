@@ -1,0 +1,15 @@
+extends: existence
+message: "Modal ou terme incertain interdit en ASD-STF100 : '%s'."
+level: error
+ignorecase: true
+tokens:
+  - devrait
+  - devraient
+  - pourrait
+  - pourraient
+  - serait
+  - seraient
+  - faudrait
+  - éventuellement
+  - potentiellement
+  - susceptible de

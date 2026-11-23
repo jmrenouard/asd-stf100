@@ -1,0 +1,7 @@
+extends: existence
+message: "Point-virgule interdit en ASD-STF100 (Règle 8.1). Séparez en deux phrases."
+level: error
+nonword: true
+scope: sentence
+tokens:
+  - ';'
