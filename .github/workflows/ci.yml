@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  verify-and-build:
+    name: Test, Lint, Diataxis Check, and Build PDF
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install package and dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[pdf,dev]"
+
+      - name: Verify generated documentation sync
+        run: python scripts/sync_docs.py --check
+
+      - name: Validate French Diataxis docs and ASD-STF100 compliance
+        run: python -m asd_stf100.diataxis_check_fr docs --strict --check-stf
+
+      - name: Build specification PDF
+        run: python scripts/build_pdf.py --output dist/ASD-STF100_ISSUE1.pdf
+
+      - name: Run full pytest suite
+        run: pytest -v
+
+      - name: Upload compiled specification PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ASD-STF100_ISSUE1.pdf
+          path: dist/ASD-STF100_ISSUE1.pdf
+          if-no-files-found: error
