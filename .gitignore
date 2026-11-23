@@ -1,0 +1,28 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+develop-eggs/
+*.egg
+
+# Virtual environments & caches
+.venv/
+venv/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Docs build outputs & downloaded Vale bundles (keep custom .vale/styles/)
+site/
+.vale/*
+!.vale/styles/
+
+# OS / Editor scratch
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
