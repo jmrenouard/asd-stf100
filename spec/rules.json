@@ -1,0 +1,866 @@
+{
+  "meta": {
+    "code": "ASD-STF100",
+    "title": "Français Technique Simplifié",
+    "subtitle": "Norme ouverte de rédaction technique contrôlée (procédures, exploitation et sécurité)",
+    "issue": "Édition 1",
+    "version": "1.0.0",
+    "date": "2026-11-23",
+    "inspired_by": "ASD-STE100 Issue 9 (2025-01-15)",
+    "repository": "https://github.com/jmrenouard/asd-stf100",
+    "license_code": "MIT",
+    "license_spec": "CC-BY-SA-4.0"
+  },
+  "sections": [
+    {
+      "number": 1,
+      "title": "Les mots (Vocabulaire et terminologie)",
+      "intro": "Le vocabulaire contrôlé réduit les ambiguïtés lexicales entre rédacteurs, opérateurs et systèmes de traduction. Cette section fixe les règles d'emploi des mots approuvés, des noms techniques et des verbes techniques.",
+      "rules": [
+        {
+          "id": "1.1",
+          "title": "Utiliser uniquement le vocabulaire autorisé",
+          "statement": "Utilisez uniquement les mots approuvés du dictionnaire STF-100, les noms techniques et les verbes techniques autorisés.",
+          "explanation": "Chaque concept d'action ou de relation dispose d'un terme unique dans le dictionnaire. Cette discipline supprime les synonymes inutiles.",
+          "examples": [
+            {
+              "non_stf": "Procédez à la vérification du niveau d'huile avant le démarrage.",
+              "stf": "Vérifiez le niveau d'huile avant le démarrage.",
+              "note": "Remplacez la locution non approuvée par le verbe direct VÉRIFIER."
+            }
+          ]
+        },
+        {
+          "id": "1.2",
+          "title": "Respecter la catégorie grammaticale approuvée",
+          "statement": "Employez chaque mot approuvé uniquement dans la catégorie grammaticale indiquée dans le dictionnaire.",
+          "explanation": "Un mot approuvé comme nom ne peut pas servir de verbe ou d'adjectif en dehors des cas prévus par le dictionnaire.",
+          "examples": [
+            {
+              "non_stf": "Contactez le support pour signaler cette alarme.",
+              "stf": "Contactez l'équipe de soutien pour signaler cette alarme.",
+              "note": "Utilisez un nom technique de rôle (Catégorie 11) au lieu du nom générique support employé comme service."
+            }
+          ]
+        },
+        {
+          "id": "1.3",
+          "title": "Respecter le sens approuvé de chaque mot",
+          "statement": "Employez chaque mot approuvé uniquement dans le sens défini par le dictionnaire STF-100.",
+          "explanation": "Les mots français courants possèdent parfois plusieurs acceptions. Le dictionnaire STF-100 restreint chaque entrée à un sens unique et précis.",
+          "examples": [
+            {
+              "non_stf": "Suivez les instructions de coupure d'urgence.",
+              "stf": "Respectez les instructions de coupure d'urgence.",
+              "note": "Dans le dictionnaire, SUIVRE désigne une succession physique ou temporelle, pas l'obéissance à une règle."
+            }
+          ]
+        },
+        {
+          "id": "1.4",
+          "title": "Employer les formes fléchies approuvées",
+          "statement": "Utilisez uniquement les formes fléchies autorisées pour les verbes et adjectifs. Accordez normalement en genre et en nombre les noms comptables.",
+          "explanation": "Évitez les dérivations libres ou les formes conjuguées littéraires absentes du modèle STF-100.",
+          "examples": [
+            {
+              "non_stf": "Lorsque le technicien eût fermé la vanne, la pression chuta.",
+              "stf": "Quand le technicien a fermé la vanne, la pression a diminué.",
+              "note": "Utilisez uniquement les temps simples et le passé composé factuel autorisés."
+            }
+          ]
+        },
+        {
+          "id": "1.5",
+          "title": "Respecter les 22 catégories de noms techniques",
+          "statement": "Limitez les noms techniques spécialisés aux 22 catégories définies par la spécification.",
+          "explanation": "Un mot absent du dictionnaire général est admis comme nom technique uniquement s'il appartient à l'une des 22 catégories officielles.",
+          "examples": [
+            {
+              "non_stf": "Remplacez la bidouille de fixation par un boulon neuf.",
+              "stf": "Remplacez l'étrier de fixation par un boulon neuf.",
+              "note": "ÉTRIER appartient à la catégorie 1 (pièces officielles)."
+            }
+          ]
+        },
+        {
+          "id": "1.6",
+          "title": "Limiter l'usage des mots non approuvés aux noms techniques",
+          "statement": "N'utilisez un mot non approuvé que comme nom technique (ou composant d'un groupe nominal technique) dans une catégorie valide.",
+          "explanation": "Un nom technique spécialisé ne doit pas servir de qualificatif générique dans un autre contexte.",
+          "examples": [
+            {
+              "non_stf": "Démarrez le service backup du serveur principal.",
+              "stf": "Démarrez le service de sauvegarde sur le serveur secondaire.",
+              "note": "SAUVEGARDE est un nom technique informatique (Catégorie 19) en français."
+            }
+          ]
+        },
+        {
+          "id": "1.7",
+          "title": "Ne jamais utiliser un nom technique comme verbe",
+          "statement": "N'employez jamais un nom technique comme verbe conjugué ou à l'infinitif.",
+          "explanation": "Transformez les verbes improvisés issus de noms techniques en un verbe approuvé suivi du nom technique.",
+          "examples": [
+            {
+              "non_stf": "Monitorez le bus CAN pendant dix secondes.",
+              "stf": "Surveillez le bus CAN pendant dix secondes.",
+              "note": "Utilisez le verbe approuvé SURVEILLER."
+            }
+          ]
+        },
+        {
+          "id": "1.8",
+          "title": "Respecter le glossaire métier officiel",
+          "statement": "Utilisez les noms techniques normalisés par votre entreprise, votre projet ou la documentation constructeur.",
+          "explanation": "La cohérence terminologique repose sur un glossaire unique partagé entre l'ingénierie, la maintenance et l'exploitation.",
+          "examples": [
+            {
+              "non_stf": "Ouvrez le coffret ou l'armoire TGBT selon le plan.",
+              "stf": "Ouvrez l'armoire TGBT selon le schéma électrique.",
+              "note": "Conservez le terme exact issu de la nomenclature officielle."
+            }
+          ]
+        },
+        {
+          "id": "1.9",
+          "title": "Choisir des noms techniques courts et précis",
+          "statement": "Lorsque vous créez ou adoptez un nom technique, choisissez un terme court, précis et facile à comprendre.",
+          "explanation": "Un terme concis facilite le respect de la limite de trois mots dans les groupes nominaux.",
+          "examples": [
+            {
+              "non_stf": "Inspectez le dispositif de régulation thermique par circulation liquide.",
+              "stf": "Examinez le refroidisseur liquide.",
+              "note": "Préférez un nom technique direct du domaine."
+            }
+          ]
+        },
+        {
+          "id": "1.10",
+          "title": "Proscrire le jargon oral et les anglicismes familiers",
+          "statement": "N'utilisez pas de termes régionaux, d'argot d'atelier ou d'anglicismes informels comme noms ou verbes techniques.",
+          "explanation": "Le jargon oral nuit à la compréhension pour les équipes internationales et les lecteurs non natifs.",
+          "examples": [
+            {
+              "non_stf": "Rebootez le nœud primaire puis checkez les logs.",
+              "stf": "Redémarrez le nœud primaire puis examinez les journaux.",
+              "note": "Remplacez rebooter et checker par REDÉMARRER et EXAMINER."
+            }
+          ]
+        },
+        {
+          "id": "1.11",
+          "title": "Conserver un terme unique pour chaque élément",
+          "statement": "Utilisez un seul nom technique constant pour désigner un même composant ou objet dans tout le document.",
+          "explanation": "La variation stylistique crée un doute : le lecteur croit souvent qu'un autre mot désigne une autre pièce.",
+          "examples": [
+            {
+              "non_stf": "Arrêtez le serveur mandataire. Vérifiez les journaux du proxy. Relancez la passerelle.",
+              "stf": "Arrêtez le serveur mandataire. Vérifiez les journaux du serveur mandataire. Démarrez le serveur mandataire.",
+              "note": "Répétez exactement « serveur mandataire » à chaque étape."
+            }
+          ]
+        },
+        {
+          "id": "1.12",
+          "title": "Limiter l'emploi des verbes techniques aux 4 catégories",
+          "statement": "Employez un verbe issu des 4 catégories techniques uniquement si aucun verbe du dictionnaire approuvé n'exprime exactement l'action.",
+          "explanation": "Si un verbe approuvé du dictionnaire convient dans une procédure générale, préférez toujours le verbe approuvé.",
+          "examples": [
+            {
+              "non_stf": "Si vous détectez une perte de paquets, remplacez le câble.",
+              "stf": "Si vous trouvez une perte de paquets, remplacez le câble.",
+              "note": "En procédure opérateur, utilisez TROUVER ; DÉTECTER reste réservé aux capteurs (Catégorie 3a)."
+            }
+          ]
+        },
+        {
+          "id": "1.13",
+          "title": "Ne jamais utiliser un verbe technique comme nom",
+          "statement": "N'employez pas un verbe technique comme nom commun. Vous pouvez utiliser son participe passé comme adjectif d'état.",
+          "explanation": "Les verbes techniques décrivent des opérations spécialisées. Les noms correspondants appartiennent aux 22 catégories de noms.",
+          "examples": [
+            {
+              "non_stf": "Faites un soudage rapide sur la plaque.",
+              "stf": "Soudez la plaque. Examinez la plaque soudée.",
+              "note": "SOUDER est un verbe technique de fabrication (Catégorie 1)."
+            }
+          ]
+        },
+        {
+          "id": "1.14",
+          "title": "Maintenir une orthographe française homogène et accentuée",
+          "statement": "Respectez l'orthographe française normative et conservez tous les accents sur les minuscules comme sur les majuscules.",
+          "explanation": "Les majuscules accentuées (É, È, À, Ç, Œ) évitent les ambiguïtés de lecture dans les titres et les consignes de sécurité.",
+          "examples": [
+            {
+              "non_stf": "ETAT DU SYSTEME : ARRET D'URGENCE ACTIVE.",
+              "stf": "ÉTAT DU SYSTÈME : ARRÊT D'URGENCE ACTIVÉ.",
+              "note": "Conservez les accents sur toutes les lettres majuscules."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Les groupes nominaux complexes",
+      "intro": "Les empilements de noms sans préposition rendent les textes techniques difficiles à analyser. Cette section limite la longueur des groupes nominaux.",
+      "rules": [
+        {
+          "id": "2.1",
+          "title": "Limiter les groupes nominaux à trois éléments principaux",
+          "statement": "Limitez tout groupe nominal technique à trois noms principaux au maximum. Décomposez les chaînes plus longues avec des prépositions ou des phrases courtes.",
+          "explanation": "En français, utilisez « de », « du », « pour » ou « sur » pour relier clairement la fonction à l'équipement.",
+          "examples": [
+            {
+              "non_stf": "Réglage seuil tampon connexion réplica base données",
+              "stf": "Réglage du seuil de tampon pour le réplica de base de données",
+              "note": "Décomposez l'empilement avec des prépositions claires."
+            }
+          ]
+        },
+        {
+          "id": "2.2",
+          "title": "Gérer les désignations officielles de plus de trois mots",
+          "statement": "Si une désignation officielle dépasse trois composants, écrivez-la en entier une fois, puis utilisez un sigle défini ou des traits d'union.",
+          "explanation": "Cette règle maintient l'exactitude réglementaire sans alourdir les étapes suivantes de la procédure.",
+          "examples": [
+            {
+              "non_stf": "Vérifiez l'unité de commande de vanne de purge d'air secondaire à chaque cycle.",
+              "stf": "Vérifiez l'unité de commande de vanne de purge (UCVP). Examinez ensuite l'alimentation de l'UCVP.",
+              "note": "Définissez le sigle dès la première occurrence puis réutilisez-le."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Les verbes",
+      "intro": "Les formes verbales directes à la voix active suppriment toute hésitation sur l'acteur et le moment de l'action.",
+      "rules": [
+        {
+          "id": "3.1",
+          "title": "Utiliser uniquement les formes verbales approuvées",
+          "statement": "Utilisez uniquement les formes verbales approuvées associées à chaque verbe dans le dictionnaire.",
+          "explanation": "Limitez les conjugaisons aux formes usuelles directes. Évitez les tournures rares ou archaïques.",
+          "examples": [
+            {
+              "non_stf": "Veuillez à ce que la trappe demeure close.",
+              "stf": "Gardez la trappe fermée.",
+              "note": "Remplacez demeurer/close par GARDER et l'adjectif FERMÉE."
+            }
+          ]
+        },
+        {
+          "id": "3.2",
+          "title": "Limiter les temps verbaux et proscrire le conditionnel",
+          "statement": "Utilisez uniquement l'infinitif, l'impératif présent, le présent simple, le passé composé factuel, le futur simple et le participe passé adjectival. Proscrivez le conditionnel et les adverbes d'incertitude.",
+          "explanation": "Les mots « devrait », « pourrait », « serait », « faudrait », « éventuellement », « potentiellement » et « susceptible de » créent une ambiguïté sur le caractère obligatoire d'une règle.",
+          "examples": [
+            {
+              "non_stf": "L'opérateur devrait éventuellement redémarrer le nœud si la latence pourrait augmenter.",
+              "stf": "Si la latence augmente, redémarrez le nœud.",
+              "note": "Supprimez le conditionnel et formulez une condition suivie d'un impératif."
+            }
+          ]
+        },
+        {
+          "id": "3.3",
+          "title": "Réserver le participe passé à l'expression d'un état",
+          "statement": "Utilisez le participe passé après « être » ou après un nom uniquement pour indiquer un état ou une propriété résultante.",
+          "explanation": "Un état (« La vanne est fermée ») reste conforme. Une action passive avec agent doit passer à la voix active.",
+          "examples": [
+            {
+              "non_stf": "La sauvegarde est stockée sur le disque chiffré.",
+              "stf": "La sauvegarde reste sur le disque chiffré.",
+              "note": "« Disque chiffré » décrit un état permis."
+            }
+          ]
+        },
+        {
+          "id": "3.4",
+          "title": "Éviter les périphrases verbales et temps complexes",
+          "statement": "N'employez pas de temps composés littéraires, de subjonctif complexe ni de formes modales passives.",
+          "explanation": "Remplacez « le seuil peut être ajusté » par une phrase active qui indique clairement qui agit.",
+          "examples": [
+            {
+              "non_stf": "La limite de débit peut être modifiée depuis le fichier de configuration.",
+              "stf": "Vous pouvez modifier la limite de débit dans le fichier de configuration.",
+              "note": "Remplacez la tournure passive par « Vous pouvez + infinitif »."
+            }
+          ]
+        },
+        {
+          "id": "3.5",
+          "title": "Proscrire le gérondif et le participe présent verbal en -ant",
+          "statement": "N'utilisez ni le gérondif (« en + verbe en -ant ») ni le participe présent verbal. N'employez que les mots en -ant approuvés au dictionnaire.",
+          "explanation": "Exprimez la simultanéité avec « pendant que » ou deux commandes coordonnées par « et ».",
+          "examples": [
+            {
+              "non_stf": "Appuyez sur le bouton en maintenant la trappe fermée.",
+              "stf": "Maintenez la trappe fermée et appuyez sur le bouton.",
+              "note": "Deux actions simultanées s'écrivent avec « et » à l'impératif."
+            }
+          ]
+        },
+        {
+          "id": "3.6",
+          "title": "Employer systématiquement la voix active",
+          "statement": "Utilisez toujours la voix active dans les procédures et les textes descriptifs. Nommez l'agent qui exécute l'action.",
+          "explanation": "Si aucun acteur matériel précis n'agit, utilisez l'impératif en procédure ou le sujet « vous » en texte descriptif.",
+          "examples": [
+            {
+              "non_stf": "La table de routage est mise à jour par le contrôleur.",
+              "stf": "Le contrôleur met à jour la table de routage.",
+              "note": "Placez l'agent (« Le contrôleur ») en position de sujet."
+            }
+          ]
+        },
+        {
+          "id": "3.7",
+          "title": "Préférer un verbe d'action précis à un verbe support",
+          "statement": "Utilisez un verbe d'action précis du dictionnaire plutôt qu'un verbe générique suivi d'un nom abstrait.",
+          "explanation": "Des formulations comme « effectuer un contrôle » ou « procéder au remplacement » allongent la phrase sans apporter de précision.",
+          "examples": [
+            {
+              "non_stf": "Procédez au remplacement du filtre encrassé.",
+              "stf": "Remplacez le filtre sale.",
+              "note": "Utilisez directement le verbe REMPLACER."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Les phrases",
+      "intro": "La structure grammaticale complète garantit qu'une phrase reste autonome et compréhensible dès la première lecture.",
+      "rules": [
+        {
+          "id": "4.1",
+          "title": "Rédiger des phrases courtes, complètes et univoques",
+          "statement": "Rédigez des phrases complètes avec un sujet, un verbe et une seule idée par phrase.",
+          "explanation": "Bannissez le style télégraphique qui omet le verbe principal ou les liens logiques.",
+          "examples": [
+            {
+              "non_stf": "Aucune interruption de service tolérée lors de la bascule.",
+              "stf": "Vérifiez qu'aucune coupure de service ne se produit pendant la bascule.",
+              "note": "Formulez une phrase verbale complète."
+            }
+          ]
+        },
+        {
+          "id": "4.2",
+          "title": "Conserver tous les mots grammaticaux obligatoires",
+          "statement": "Conservez tous les sujets, verbes, articles, prépositions et conjonctions nécessaires. Proscrivez les contractions familières.",
+          "explanation": "L'omission de mots grammaticaux pour gagner de la place crée des erreurs d'interprétation.",
+          "examples": [
+            {
+              "non_stf": "Si installé, ne retirez pas cavalier.",
+              "stf": "Si le cavalier est installé, ne retirez pas le cavalier.",
+              "note": "Restaurez le sujet et l'article devant chaque nom."
+            }
+          ]
+        },
+        {
+          "id": "4.3",
+          "title": "Structurer les énumérations en listes verticales",
+          "statement": "Utilisez une liste verticale dès qu'une phrase contient plusieurs conditions ou consignes. Répétez la négation dans chaque item négatif.",
+          "explanation": "Terminez la phrase d'introduction par deux-points (:). Répétez « Ne ... pas » dans chaque ligne pour éviter toute ambiguïté de portée.",
+          "examples": [
+            {
+              "non_stf": "Avant le démarrage, n'ouvrez ni le port 22 ni la trappe latérale.",
+              "stf": "Avant de démarrer le service :\n- N'ouvrez pas le port 22.\n- N'ouvrez pas la trappe latérale.",
+              "note": "Chaque élément négatif porte sa propre négation complète."
+            }
+          ]
+        },
+        {
+          "id": "4.4",
+          "title": "Utiliser des connecteurs logiques simples",
+          "statement": "Employez des connecteurs simples (« et », « mais », « ensuite », « donc », « parce que », « en conséquence ») pour relier des phrases liées.",
+          "explanation": "Les connecteurs explicites clarifient la cause, la séquence et l'opposition entre deux phrases.",
+          "examples": [
+            {
+              "non_stf": "La pompe chauffe. Il convient de l'arrêter.",
+              "stf": "La pompe chauffe. En conséquence, arrêtez la pompe.",
+              "note": "Explicitez la relation de cause à effet."
+            }
+          ]
+        },
+        {
+          "id": "4.5",
+          "title": "Placer un article ou démonstratif devant chaque nom",
+          "statement": "Placez toujours un article ou un adjectif démonstratif devant un nom commun ou un groupe nominal, sauf devant un nom suivi d'un identifiant.",
+          "explanation": "On écrit « Ouvrez la vanne principale », mais « Ouvrez la vanne V2 » ou « serveur N2 » sans répéter l'article après le nom identifié.",
+          "examples": [
+            {
+              "non_stf": "Ouvrir vanne principale puis lire capteur pression.",
+              "stf": "Ouvrez la vanne principale puis lisez le capteur de pression.",
+              "note": "Ajoutez les articles « la » et « le »."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Rédaction procédurale",
+      "intro": "Les procédures et modes opératoires guident directement une action sur le terrain ou en exploitation. Chaque phrase doit être immédiatement exécutable.",
+      "rules": [
+        {
+          "id": "5.1",
+          "title": "Limiter chaque phrase procédurale à 20 mots maximum",
+          "statement": "Limitez chaque phrase d'instruction à 20 mots au maximum, y compris dans les consignes de sécurité.",
+          "explanation": "Au-delà de 20 mots, scindez la phrase en deux étapes distinctes ou en une liste verticale.",
+          "examples": [
+            {
+              "non_stf": "Avant de lancer la mise à jour logicielle complète du cluster de production, assurez-vous que les sauvegardes quotidiennes des nœuds sont terminées et validées sans erreur.",
+              "stf": "Vérifiez que toutes les sauvegardes des nœuds sont terminées sans erreur. Lancez ensuite la mise à jour du cluster.",
+              "note": "Deux phrases courtes de 12 et 9 mots remplacent une phrase de 27 mots."
+            }
+          ]
+        },
+        {
+          "id": "5.2",
+          "title": "Placer une seule instruction par phrase",
+          "statement": "Ne mettez qu'une seule instruction par phrase, sauf si deux actions doivent se produire en même temps.",
+          "explanation": "Un opérateur suit une séquence linéaire étape par étape sans risque d'omettre une sous-action cachée au milieu d'une phrase.",
+          "examples": [
+            {
+              "non_stf": "Fermez le capot et serrez les quatre vis puis branchez le câble secteur.",
+              "stf": "Fermez le capot. Serrez les quatre vis. Connectez ensuite le câble secteur.",
+              "note": "Séparez les actions successives en phrases distinctes."
+            }
+          ]
+        },
+        {
+          "id": "5.3",
+          "title": "Rédiger à l'impératif sans tournure modale redondante",
+          "statement": "Écrivez les consignes à l'impératif direct. Supprimez « Vous devez », « Il faut », « Il convient de » et « Il est nécessaire de ».",
+          "explanation": "L'impératif à la 2e personne du pluriel (« Ouvrez », « Coupez ») exprime l'ordre d'exécution avec le minimum de mots.",
+          "examples": [
+            {
+              "non_stf": "Vous devez placer l'interrupteur principal sur ARRÊT.",
+              "stf": "Mettez l'interrupteur principal sur ARRÊT.",
+              "note": "Supprimez « Vous devez »."
+            }
+          ]
+        },
+        {
+          "id": "5.4",
+          "title": "Placer la condition avant la commande",
+          "statement": "Lorsqu'une instruction dépend d'une condition, écrivez la condition en tête de phrase, suivie d'une virgule, puis la commande à l'impératif.",
+          "explanation": "Le lecteur vérifie d'abord si la condition s'applique avant d'exécuter ou d'ignorer l'action.",
+          "examples": [
+            {
+              "non_stf": "Redémarrez le démon si le port 5432 ne répond pas.",
+              "stf": "Si le port 5432 ne répond pas, redémarrez le service.",
+              "note": "Condition d'abord + virgule + impératif."
+            }
+          ]
+        },
+        {
+          "id": "5.5",
+          "title": "Réserver les blocs NOTE aux informations descriptives",
+          "statement": "Utilisez une NOTE uniquement pour fournir une information utile (25 mots max par phrase), jamais pour donner une instruction ni une consigne de sécurité.",
+          "explanation": "Si le non-respect d'une mention entraîne une blessure ou un dégât matériel, utilisez AVERTISSEMENT ou ATTENTION.",
+          "examples": [
+            {
+              "non_stf": "NOTE : Coupez toujours le courant avant de retirer le module.",
+              "stf": "AVERTISSEMENT : COUPEZ LE COURANT AVANT DE RETIRER LE MODULE. UNE TENSION ÉLECTRIQUE PEUT CAUSER UNE BLESSURE GRAVE.",
+              "note": "Une règle qui évite un danger est une consigne de sécurité, jamais une NOTE."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Rédaction descriptive",
+      "intro": "La rédaction descriptive explique le fonctionnement d'un système ou son architecture de façon progressive, structurée et factuelle.",
+      "rules": [
+        {
+          "id": "6.1",
+          "title": "Présenter l'information progressivement",
+          "statement": "Introduisez les concepts du général au particulier et limitez chaque phrase à un seul sujet.",
+          "explanation": "Un fait technique par phrase évite la surcharge cognitive lors de la lecture d'une spécification complexe.",
+          "examples": [
+            {
+              "non_stf": "Le répartiteur distribue les requêtes HTTP sur trois nœuds actifs qui répliquent aussi les sessions en mémoire cache.",
+              "stf": "Le répartiteur distribue les requêtes HTTP sur trois nœuds actifs. Chaque nœud réplique les sessions en mémoire cache.",
+              "note": "Séparez les deux mécanismes en deux phrases."
+            }
+          ]
+        },
+        {
+          "id": "6.2",
+          "title": "Répéter les mots clés pour clarifier la logique",
+          "statement": "Répétez les noms techniques exacts d'une phrase à l'autre pour montrer clairement les liens logiques.",
+          "explanation": "La répétition fidèle d'un terme lève toute ambiguïté dans les descriptions d'architecture.",
+          "examples": [
+            {
+              "non_stf": "Le capteur mesure la pression. Cet équipement transmet ensuite la donnée au bus.",
+              "stf": "Le capteur mesure la pression. Le capteur transmet ensuite la pression au bus.",
+              "note": "Gardez exactement les mêmes termes clés."
+            }
+          ]
+        },
+        {
+          "id": "6.3",
+          "title": "Limiter chaque phrase descriptive à 25 mots maximum",
+          "statement": "Limitez chaque phrase de texte descriptif à 25 mots au maximum.",
+          "explanation": "Une limite stricte de 25 mots maintient la clarté des phrases explicatives et des remarques.",
+          "examples": [
+            {
+              "non_stf": "Lorsqu'un nœud primaire cesse de répondre pendant plus de quinze secondes consécutives au contrôle de santé périodique, le mécanisme d'élection transfère automatiquement le rôle actif vers un nœud secondaire disponible.",
+              "stf": "Une vérification périodique examine l'état du nœud primaire. Si le nœud primaire ne répond pas pendant 15 secondes, le cluster active un nœud secondaire.",
+              "note": "Découpez en deux phrases inférieures à 25 mots."
+            }
+          ]
+        },
+        {
+          "id": "6.4",
+          "title": "Commencer chaque paragraphe par une phrase thème",
+          "statement": "Regroupez les phrases liées en paragraphes : placez l'idée principale dans la première phrase puis détaillez-la.",
+          "explanation": "La phrase d'ouverture permet au lecteur de parcourir rapidement la documentation et de trouver l'information pertinente.",
+          "examples": [
+            {
+              "non_stf": "La ventilation tourne à 24 V. Il y a deux filtres. L'unité de refroidissement protège les cartes.",
+              "stf": "L'unité de refroidissement protège les cartes électroniques. Le ventilateur fonctionne sous 24 V. Deux filtres retiennent la poussière.",
+              "note": "Placez l'idée directrice en tête de paragraphe."
+            }
+          ]
+        },
+        {
+          "id": "6.5",
+          "title": "Conserver un seul sujet par paragraphe",
+          "statement": "Traitez un seul composant, concept ou mécanisme par paragraphe.",
+          "explanation": "Créez un nouveau paragraphe dès que vous changez de composant ou de mode de fonctionnement.",
+          "examples": [
+            {
+              "non_stf": "Le module réseau gère le trafic TCP. Par ailleurs, la batterie de secours fournit quatre heures d'autonomie.",
+              "stf": "Le module réseau gère le trafic TCP.\n\nLa batterie de secours fournit quatre heures d'autonomie.",
+              "note": "Séparez les deux sujets en deux paragraphes."
+            }
+          ]
+        },
+        {
+          "id": "6.6",
+          "title": "Limiter chaque paragraphe à six phrases maximum",
+          "statement": "Limitez la longueur de chaque paragraphe à un maximum de 6 phrases.",
+          "explanation": "Au-delà de 6 phrases, divisez le contenu en deux paragraphes ou en liste structurée.",
+          "examples": [
+            {
+              "non_stf": "(Bloc continu de 9 phrases sans saut de ligne)",
+              "stf": "(Deux paragraphes distincts de 4 et 5 phrases, chacun centré sur un sous-thème)",
+              "note": "Respectez le plafond de 6 phrases par paragraphe."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Consignes de sécurité",
+      "intro": "Les consignes de sécurité préviennent les accidents corporels et les avaries matérielles ou logicielles. Elles obéissent au plafond strict de 20 mots par phrase.",
+      "rules": [
+        {
+          "id": "7.1",
+          "title": "Choisir AVERTISSEMENT ou ATTENTION selon l'analyse de risque",
+          "statement": "Utilisez AVERTISSEMENT en cas de risque de blessure ou de décès (seul ou avec risque matériel). Utilisez ATTENTION uniquement en cas de risque de dommage matériel, équipement ou perte de données.",
+          "explanation": "La hiérarchie entre sécurité des personnes (AVERTISSEMENT) et protection des biens ou données (ATTENTION) doit rester invariable.",
+          "examples": [
+            {
+              "non_stf": "ATTENTION : Haute tension mortelle à l'intérieur du coffret.",
+              "stf": "AVERTISSEMENT : COUPEZ LE DISJONCTEUR PRINCIPAL AVANT D'OUVRIR LE COFFRET. UNE HAUTE TENSION PEUT CAUSER LA MORT.",
+              "note": "Un danger mortel exige toujours le mot-indicateur AVERTISSEMENT."
+            }
+          ]
+        },
+        {
+          "id": "7.2",
+          "title": "Commencer la consigne par une commande ou condition claire",
+          "statement": "Commencez toute consigne de sécurité par une commande impérative directe ou une condition précise.",
+          "explanation": "L'opérateur identifie immédiatement l'action protectrice avant même de toucher à l'équipement.",
+          "examples": [
+            {
+              "non_stf": "ATTENTION : Des données non sauvegardées peuvent être détruites lors de la mise à jour.",
+              "stf": "ATTENTION : SAUVEGARDEZ LA BASE DE DONNÉES AVANT LA MISE À JOUR. UNE COUPURE PEUT CORROMPRE LES DONNÉES.",
+              "note": "Placez l'action préventive en première phrase."
+            }
+          ]
+        },
+        {
+          "id": "7.3",
+          "title": "Indiquer explicitement le risque ou la conséquence",
+          "statement": "Précisez toujours le danger concret ou la conséquence matérielle si la consigne n'est pas respectée.",
+          "explanation": "Une consigne motivée par une conséquence exacte réduit les contournements en situation opérationnelle.",
+          "examples": [
+            {
+              "non_stf": "AVERTISSEMENT : Portez des gants isolants.",
+              "stf": "AVERTISSEMENT : PORTEZ DES GANTS ISOLANTS AVANT DE MANIPULER LA BARRE D'ALIMENTATION. UN CONTACT ÉLECTRIQUE PEUT CAUSER UNE BRÛLURE GRAVE.",
+              "note": "Ajoutez une seconde phrase courte décrivant la conséquence exacte."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Ponctuation et comptage des mots",
+      "intro": "Des règles déterministes de ponctuation et de décompte permettent à la fois aux rédacteurs et aux outils automatiques (`stf_check.py`) de mesurer la conformité.",
+      "rules": [
+        {
+          "id": "8.1",
+          "title": "Proscrire le point-virgule",
+          "statement": "Utilisez la ponctuation française standard, mais n'employez jamais le point-virgule. Remplacez le point-virgule par deux phrases distinctes.",
+          "explanation": "Le point-virgule juxtapose deux propositions dans une même unité longue et complique l'analyse procédurale.",
+          "examples": [
+            {
+              "non_stf": "Arrêtez le serveur ; déconnectez ensuite le câble réseau.",
+              "stf": "Arrêtez le serveur. Déconnectez ensuite le câble réseau.",
+              "note": "Scindez en deux phrases terminées par un point."
+            }
+          ]
+        },
+        {
+          "id": "8.2",
+          "title": "Souder les unités composées par un trait d'union",
+          "statement": "Reliez par un trait d'union (-) les termes qui forment une unité sémantique ou un modificateur technique indissociable.",
+          "explanation": "Exemples courants : sous-système, porte-outils, basse-pression, haute-disponibilité, joint-torique.",
+          "examples": [
+            {
+              "non_stf": "Contrôlez le sous ensemble haute pression.",
+              "stf": "Examinez le sous-système haute-pression.",
+              "note": "Le trait d'union clarifie l'unité fonctionnelle."
+            }
+          ]
+        },
+        {
+          "id": "8.3",
+          "title": "Restreindre l'usage des parenthèses",
+          "statement": "Utilisez les parenthèses uniquement pour les renvois, les repères numériques, la définition d'un sigle ou une brève précision.",
+          "explanation": "Ne placez jamais une instruction ou une condition importante à l'intérieur de parenthèses.",
+          "examples": [
+            {
+              "non_stf": "Ouvrez la vanne (mais vérifiez d'abord que la pression est nulle).",
+              "stf": "Vérifiez que la pression est nulle. Ouvrez ensuite la vanne (repère 4).",
+              "note": "Sortez les consignes des parenthèses."
+            }
+          ]
+        },
+        {
+          "id": "8.4",
+          "title": "Compter séparément les items d'une liste verticale",
+          "statement": "Dans une liste verticale, les deux-points (:) terminent la phrase d'introduction. Chaque item de la liste compte comme une phrase autonome.",
+          "explanation": "Les numéros de puces ou d'étapes en début de ligne ne sont pas comptés dans le nombre de mots de l'item.",
+          "examples": [
+            {
+              "non_stf": "Vérifiez trois éléments : le filtre, la pompe et le manomètre avant de relancer le cycle complet sur la ligne.",
+              "stf": "Vérifiez les trois éléments suivants :\n- Le filtre.\n- La pompe.\n- Le manomètre.",
+              "note": "La phrase d'introduction compte 5 mots ; chaque puce est comptée séparément."
+            }
+          ]
+        },
+        {
+          "id": "8.5",
+          "title": "Compter les groupes entre parenthèses",
+          "statement": "Un groupe entre parenthèses compte pour un seul mot dans la phrase qui le contient, et reste évalué séparément s'il forme une phrase.",
+          "explanation": "Cette convention évite de pénaliser les renvois (« voir Section 3 ») et limite aussi la taille des incises.",
+          "examples": [
+            {
+              "non_stf": "Ouvrez la vanne de purge (voir schéma hydraulique à la fin du manuel complet) avant la vidange.",
+              "stf": "Ouvrez la vanne de purge (voir Section 3) avant la vidange.",
+              "note": "« (voir Section 3) » compte pour un seul mot dans la phrase parente."
+            }
+          ]
+        },
+        {
+          "id": "8.6",
+          "title": "Compter les sept éléments unitaires pour un seul mot",
+          "statement": "Comptez pour un seul mot les nombres, les nombres avec unité, les sigles et les identifiants alphanumériques. Comptez aussi pour un mot les citations, titres, étiquettes et noms propres.",
+          "explanation": "Les valeurs chiffrées avec unités écrites en toutes lettres (« 15 secondes », « 20 kg », « 10 °C », « 100 Mo ») comptent également pour un seul mot.",
+          "examples": [
+            {
+              "non_stf": "Comptez « 800 kPa » et « 15 secondes » comme plusieurs mots séparés.",
+              "stf": "Maintenez la pression à 800 kPa pendant 15 secondes.",
+              "note": "« 800 kPa » = 1 mot et « 15 secondes » = 1 mot (total de la phrase : 7 mots)."
+            }
+          ]
+        },
+        {
+          "id": "8.7",
+          "title": "Compter chaque mot composé avec trait d'union pour un seul mot",
+          "statement": "Comptez chaque mot composé relié par un ou plusieurs traits d'union comme un seul mot.",
+          "explanation": "Par exemple, « porte-outils », « sous-système » et « arrêtez-le » valent chacun exactement 1 mot.",
+          "examples": [
+            {
+              "non_stf": "Comptez « sous-système » comme deux mots.",
+              "stf": "Isolez le sous-système et arrêtez-le.",
+              "note": "Cette phrase contient 5 mots (« Isolez », « le », « sous-système », « et », « arrêtez-le »)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Pratiques rédactionnelles",
+      "intro": "La qualité finale repose sur la réécriture claire plutôt que sur la simple substitution mécanique mot à mot.",
+      "rules": [
+        {
+          "id": "9.1",
+          "title": "Reformuler la phrase lorsque le remplacement mot à mot échoue",
+          "statement": "Si le remplacement d'un mot non approuvé alourdit la phrase ou change le sens, reformulez entièrement la phrase.",
+          "explanation": "La compréhension immédiate par le lecteur prime toujours sur le calque syntaxique de la phrase d'origine.",
+          "examples": [
+            {
+              "non_stf": "Préalablement à toute intervention, procédez à la coupure de l'alimentation.",
+              "stf": "Coupez l'alimentation avant toute intervention.",
+              "note": "Supprimez la locution lourde et passez directement à l'impératif."
+            }
+          ]
+        },
+        {
+          "id": "9.2",
+          "title": "Contrôler les sens restreints des mots polysémiques",
+          "statement": "Vérifiez systématiquement l'acception approuvée de chaque mot courant avant de l'employer dans une procédure.",
+          "explanation": "Un mot français usuel comme « contrôler » ou « supporter » comporte plusieurs sens techniques incompatibles. Utilisez un terme précis.",
+          "examples": [
+            {
+              "non_stf": "Ce serveur supporte jusqu'à cent connexions simultanées.",
+              "stf": "Ce serveur prend en charge jusqu'à 100 connexions en même temps.",
+              "note": "Évitez le calque anglais « supporter » au profit de PRENDRE EN CHARGE."
+            }
+          ]
+        },
+        {
+          "id": "9.3",
+          "title": "Supprimer les locutions verbales et prépositives lourdes",
+          "statement": "Remplacez les locutions complexes (« afin de », « en vue de », « au niveau de », « par le biais de », « à l'aide de ») par des mots simples.",
+          "explanation": "Des prépositions directes comme « pour », « avec », « par » ou « dans » allègent la syntaxe sans perte d'information.",
+          "examples": [
+            {
+              "non_stf": "Serrez l'écrou à l'aide d'une clé dynamométrique afin d'éviter toute fuite.",
+              "stf": "Serrez l'écrou avec une clé dynamométrique pour empêcher toute fuite.",
+              "note": "Remplacez « à l'aide d' » par « avec » et « afin d' » par « pour »."
+            }
+          ]
+        },
+        {
+          "id": "9.4",
+          "title": "Maintenir une phraséologie uniforme entre procédures",
+          "statement": "Utilisez des formulations identiques pour les étapes répétitives dans l'ensemble d'un manuel ou d'une série documentaire.",
+          "explanation": "L'uniformité réduit le temps d'apprentissage des opérateurs et fiabilise les vérifications automatisées.",
+          "examples": [
+            {
+              "non_stf": "Procédure A : Mettez hors tension. Procédure B : Coupez le jus sur l'armoire.",
+              "stf": "Procédure A : Coupez l'alimentation électrique. Procédure B : Coupez l'alimentation électrique.",
+              "note": "Adoptez une formule constante pour chaque étape récurrente."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "general_recommendations": [
+    {
+      "id": "GR-1",
+      "title": "Conserver la conjonction « que »",
+      "statement": "Conservez systématiquement la conjonction « que » après les verbes déclaratifs, d'observation ou de vérification.",
+      "explanation": "Écrivez « Vérifiez que », « Confirmez que », « Indiquez que » pour délimiter nettement la proposition subordonnée.",
+      "examples": [
+        {
+          "non_stf": "Vérifiez le voyant vert s'allume.",
+          "stf": "Vérifiez que le voyant vert s'allume."
+        }
+      ]
+    },
+    {
+      "id": "GR-2",
+      "title": "Clarifier la préposition « avec »",
+      "statement": "Vérifiez chaque emploi de « avec » afin d'éviter toute ambiguïté entre association, contenu ou outillage.",
+      "explanation": "Placez le verbe d'action principal en tête (« Nettoyez le contact avec un chiffon sec ») plutôt que « Utilisez un chiffon sec pour nettoyer... ».",
+      "examples": [
+        {
+          "non_stf": "Utilisez le mastic S4 pour sceller le joint.",
+          "stf": "Scellez le joint avec le mastic S4."
+        }
+      ]
+    },
+    {
+      "id": "GR-3",
+      "title": "Lever l'ambiguïté des pronoms",
+      "statement": "Répétez le nom exact dès qu'un pronom (« il », « elle », « ils », « le », « la », « les ») peut renvoyer à plus d'un antécédent.",
+      "explanation": "Une répétition courte protège contre les erreurs de manipulation sur des équipements voisins.",
+      "examples": [
+        {
+          "non_stf": "Retirez le couvercle du réservoir puis nettoyez-le.",
+          "stf": "Retirez le couvercle du réservoir puis nettoyez le couvercle."
+        }
+      ]
+    },
+    {
+      "id": "GR-4",
+      "title": "Éviter les démonstratifs isolés (« cela », « ceci »)",
+      "statement": "Remplacez « cela » ou « ceci » par « ce / cette + nom » lorsque le pronom désigne toute une situation précédente.",
+      "explanation": "Un groupe nominal démonstratif explicite précise exactement l'effet ou la cause dont on parle.",
+      "examples": [
+        {
+          "non_stf": "La pression monte vite. Cela déclenche l'alarme.",
+          "stf": "La pression monte vite. Cette hausse déclenche l'alarme."
+        }
+      ]
+    },
+    {
+      "id": "GR-5",
+      "title": "Éviter les faux amis et calques anglais",
+      "statement": "Contrôlez les mots français ressemblant à l'anglais technique (`supporter`, `initier`, `adresser`, `assumer`, `opportunité`) et remplacez les calques.",
+      "explanation": "Utilisez le terme français exact : « prendre en charge », « démarrer », « traiter », « supposer ».",
+      "examples": [
+        {
+          "non_stf": "Cette procédure adresse les erreurs de réplication.",
+          "stf": "Cette procédure traite les erreurs de réplication."
+        }
+      ]
+    },
+    {
+      "id": "GR-6",
+      "title": "Proscrire les abréviations latines",
+      "statement": "N'utilisez pas `e.g.`, `i.e.`, `etc.` ni `cf.`. Écrivez « par exemple », « c'est-à-dire », « et les autres éléments » ou « voir ».",
+      "explanation": "Les abréviations latines perturbent la lecture rapide et le découpage automatique des phrases.",
+      "examples": [
+        {
+          "non_stf": "Nettoyez les capteurs (e.g. sonde thermique, débitmètre, etc.).",
+          "stf": "Nettoyez les capteurs, par exemple la sonde thermique et le débitmètre."
+        }
+      ]
+    },
+    {
+      "id": "GR-7",
+      "title": "Pratiquer un langage neutre et inclusif",
+      "statement": "Utilisez des formulations neutres ou collectives (« le personnel », « l'équipe », « vous ») lorsque le genre n'est pas pertinent.",
+      "explanation": "L'adresse directe à l'impératif ou par « vous » reste naturellement neutre en français technique.",
+      "examples": [
+        {
+          "non_stf": "L'homme de maintenance doit vérifier s'il porte son casque.",
+          "stf": "Le personnel de maintenance porte un casque de protection."
+        }
+      ]
+    },
+    {
+      "id": "GR-8",
+      "title": "Limiter les cascades de compléments du nom",
+      "statement": "Limitez à deux niveaux successifs les compléments introduits par « de / du / des » et reformulez les cascades plus profondes.",
+      "explanation": "Au-delà de deux « de » enchaînés, coupez la phrase ou exprimez la relation avec un verbe clair.",
+      "examples": [
+        {
+          "non_stf": "Vérifiez la valeur de la limite de temps de réponse de la base de données.",
+          "stf": "Vérifiez le délai maximal de réponse pour la base de données."
+        }
+      ]
+    }
+  ]
+}
