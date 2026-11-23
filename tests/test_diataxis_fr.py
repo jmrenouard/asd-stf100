@@ -9,6 +9,7 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
+from typing import Any
 
 import pytest
 
@@ -333,6 +334,33 @@ def test_skill_layout_discovers_sibling_stf_check(tmp_path: Path) -> None:
 # ---------------------------------------------------------------------------
 
 
+def _load_mkdocs_yaml(path: Path, yaml_mod: Any) -> dict[str, Any]:
+    """Parse mkdocs.yml with a SafeLoader subclass supporting PyMdownx python/name tags."""
+
+    class _MkDocsYamlLoader(yaml_mod.SafeLoader):
+        """Safe YAML loader supporting PyMdownx `!!python/name:` tag references as strings."""
+
+    def _python_name_multi_constructor(
+        loader: Any,
+        tag_suffix: str,
+        node: Any,
+    ) -> str:
+        del loader, node
+        return f"python/name:{tag_suffix}"
+
+    _MkDocsYamlLoader.add_multi_constructor(
+        "tag:yaml.org,2002:python/name:",
+        _python_name_multi_constructor,
+    )
+    loader = _MkDocsYamlLoader(path.read_text(encoding="utf-8"))
+    try:
+        parsed = loader.get_single_data()
+    finally:
+        loader.dispose()
+    assert isinstance(parsed, dict)
+    return parsed
+
+
 def test_root_docs_as_code_configs_valid() -> None:
     """Root .markdownlint.json, .vale.ini, .vale/styles/STF100/*.yml, mkdocs.yml, and docs-ci.yml parse cleanly."""
     yaml = pytest.importorskip("yaml")
@@ -342,10 +370,19 @@ def test_root_docs_as_code_configs_valid() -> None:
 
     vale_raw = (REPO_ROOT / ".vale.ini").read_text(encoding="utf-8")
     parser = configparser.ConfigParser()
-    parser.read_string("[DEFAULT]\n" + vale_raw)
+    parser.read_string("[CORE]\n" + vale_raw)
+    assert parser["CORE"]["MinAlertLevel"] == "suggestion"
     assert "docs/02-guides-pratiques/**/*.md" in parser.sections()
-    assert parser["docs/02-guides-pratiques/**/*.md"]["MinAlertLevel"] == "error"
-    assert "STF100" in parser["docs/02-guides-pratiques/**/*.md"]["BasedOnStyles"]
+    howto_vale = parser["docs/02-guides-pratiques/**/*.md"]
+    assert "MinAlertLevel" not in howto_vale
+    assert "STF100" in howto_vale["BasedOnStyles"]
+    for stf_rule in (
+        "STF100.AbreviationsLatines",
+        "STF100.LocutionsLourdes",
+        "STF100.ModauxInterdits",
+        "STF100.PointVirgule",
+    ):
+        assert howto_vale[stf_rule] == "error"
 
     vale_rules = [
         "ModauxInterdits.yml",
@@ -360,7 +397,7 @@ def test_root_docs_as_code_configs_valid() -> None:
         assert parsed_rule["extends"] == "existence"
         assert parsed_rule["tokens"]
 
-    mkdocs_cfg = yaml.safe_load((REPO_ROOT / "mkdocs.yml").read_text(encoding="utf-8"))
+    mkdocs_cfg = _load_mkdocs_yaml(REPO_ROOT / "mkdocs.yml", yaml)
     assert mkdocs_cfg["theme"]["name"] == "material"
     assert mkdocs_cfg["theme"]["language"] == "fr"
     assert mkdocs_cfg["docs_dir"] == "docs"

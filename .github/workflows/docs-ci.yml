@@ -10,6 +10,8 @@ on:
       - ".vale.ini"
       - ".vale/**"
       - ".markdownlint.json"
+      - "requirements-docs.txt"
+      - "scripts/mkdocs_hooks.py"
       - ".github/workflows/docs-ci.yml"
       - "src/asd_stf100/**"
   pull_request:
@@ -19,6 +21,8 @@ on:
       - ".vale.ini"
       - ".vale/**"
       - ".markdownlint.json"
+      - "requirements-docs.txt"
+      - "scripts/mkdocs_hooks.py"
       - ".github/workflows/docs-ci.yml"
       - "src/asd_stf100/**"
 
@@ -38,7 +42,7 @@ jobs:
       - name: Install package and MkDocs Material
         run: |
           python -m pip install --upgrade pip
-          pip install -e . mkdocs-material
+          pip install -e . -r requirements-docs.txt
 
       - name: Validate French Diataxis structure, links, governance, and STF
         run: python -m asd_stf100.diataxis_check_fr docs --strict --check-stf

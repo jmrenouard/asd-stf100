@@ -33,7 +33,7 @@ La configuration `.vale.ini` applique le style local `.vale/styles/STF100/` sans
 - **`LocutionsLourdes.yml` (`warning`) :** signale `afin de`, `en vue de`, `dans le but de`, `au niveau de`, `par le biais de`, `préalablement à`, `procéder à`, `effectuer un/une`, `à l'aide de`, `vous devez`, `il faut`, `il convient de`, `il est nécessaire de`.
 - **`AbreviationsLatines.yml` (`warning`) :** signale `e.g.`, `i.e.`, `etc.`, `cf.` (`GR-6`).
 
-Sur `docs/02-guides-pratiques/**/*.md`, `MinAlertLevel = error` garantit une conformité stricte dès l'édition dans l'IDE.
+Sur `docs/02-guides-pratiques/**/*.md`, les surcharges au niveau des règles (`STF100.AbreviationsLatines = error`, `STF100.LocutionsLourdes = error`, `STF100.ModauxInterdits = error`, `STF100.PointVirgule = error`) garantissent une conformité stricte dès l'édition dans l'IDE.
 
 ---
 

@@ -10,6 +10,7 @@ Chaque guide suit strictement la norme **ASD-STF100** en mode procédural.
 - [Migrer une documentation vers Diátaxis](migrer-documentation-diataxis.md)
 - [Configurer la CI Docs-as-Code](configurer-ci-docs-as-code.md)
 - [Générer le PDF de spécification](generer-pdf-specification.md)
+- [Publier la documentation sur IONOS](publier-documentation-ionos.md)
 
 ## Quadrants associés
 

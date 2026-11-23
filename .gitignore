@@ -18,6 +18,7 @@ ENV/
 
 # Docs build outputs & downloaded Vale bundles (keep custom .vale/styles/)
 site/
+site_dist/
 .vale/*
 !.vale/styles/
 
