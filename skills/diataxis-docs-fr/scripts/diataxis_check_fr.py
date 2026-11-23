@@ -22,11 +22,12 @@ REQUIRED_QUADRANTS = (
 def find_default_stf_script() -> Path:
     """Locate stf_check.py as a package sibling, sibling skill script, or repo source."""
     script_path = Path(__file__).resolve()
-    candidates = [
-        script_path.parent / "stf_check.py",
-        script_path.parents[2] / "francais-technique-simplifie" / "scripts" / "stf_check.py",
-        script_path.parents[2] / "src" / "asd_stf100" / "stf_check.py",
-    ]
+    candidates = [script_path.parent / "stf_check.py"]
+    if len(script_path.parents) > 2:
+        candidates.extend([
+            script_path.parents[2] / "francais-technique-simplifie" / "scripts" / "stf_check.py",
+            script_path.parents[2] / "src" / "asd_stf100" / "stf_check.py",
+        ])
     for candidate in candidates:
         if candidate.is_file():
             return candidate

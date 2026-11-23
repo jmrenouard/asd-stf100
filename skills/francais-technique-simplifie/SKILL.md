@@ -9,7 +9,8 @@ metadata:
 # Français Technique Simplifié (ASD-STF100)
 
 Ce skill aligne les procédures et documents techniques français sur la norme ouverte **ASD-STF100** (*Français Technique Simplifié*, Édition 1).
-ASD-STF100 comprend **53 règles** (Sections 1 à 9), **8 recommandations générales** (`GR-1` à `GR-8`), **22 catégories de noms techniques**, **4 catégories de verbes techniques** et un dictionnaire contrôlé.
+ASD-STF100 comprend **53 règles** (Sections 1 à 9) et **8 recommandations générales** (`GR-1` à `GR-8`).
+La norme définit aussi **22 catégories de noms techniques**, **4 catégories de verbes techniques** et un dictionnaire.
 
 Appliquez ces règles pour tout texte opérationnel destiné à l'exploitation, à la maintenance ou à l'astreinte.
 Consultez `references/regles-redaction.md` pour l'ensemble des 53 règles, `references/dictionnaire-stf.md` pour le lexique approuvé et `references/substitutions.md` pour les remplacements recommandés.
@@ -87,7 +88,9 @@ Exécutez le linter inclus avant toute validation ou fusion :
    `python scripts/stf_check.py --mode mixed <fichier.md>`
 4. Corrigez toutes les erreurs (`ERROR`) et examinez les avertissements (`WARNING`), puis relancez jusqu'à obtenir le code retour `0`.
 
-Le script vérifie automatiquement la structure, la longueur des phrases et paragraphes, les points-virgules, les modaux interdits, la voix passive avec `par`, les gérondifs, les locutions lourdes, les abréviations latines et le lexique. La validation finale du sens exact des termes reste sous la responsabilité du rédacteur.
+Le script vérifie la structure, la longueur des phrases et des paragraphes, les points-virgules et les modaux interdits.
+Il détecte aussi la voix passive avec `par`, les gérondifs, les locutions lourdes, les abréviations latines et le lexique.
+La validation finale du sens exact des termes reste sous la responsabilité du rédacteur.
 
 ## Fichiers du skill
 

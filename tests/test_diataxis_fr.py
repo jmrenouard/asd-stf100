@@ -441,6 +441,20 @@ def test_skill_runbook_templates_pass_governance_and_stf(tmp_path: Path) -> None
         assert findings == [], f"{template_path} failed: {findings}\n{stf_out}"
 
 
+def test_shallow_script_path_does_not_raise_index_error(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Standalone copies in shallow directories (len(parents) <= 2) must not raise IndexError."""
+    shallow_checker = Path("/scripts/diataxis_check_fr.py")
+    monkeypatch.setattr(diataxis_check_fr, "__file__", str(shallow_checker))
+    resolved_stf = diataxis_check_fr.find_default_stf_script()
+    assert resolved_stf.name == "stf_check.py"
+
+    shallow_scaffold = Path("/scripts/scaffold_diataxis_fr.py")
+    monkeypatch.setattr(scaffold_diataxis_fr, "__file__", str(shallow_scaffold))
+    assert scaffold_diataxis_fr.resolve_templates_dir() is None
+
+
 def test_repo_docs_pass_diataxis_and_stf_strict() -> None:
     """Repository's own docs/ tree passes diataxis_check_fr --strict --check-stf with zero findings."""
     stf_script = SRC_DIR / "asd_stf100" / "stf_check.py"

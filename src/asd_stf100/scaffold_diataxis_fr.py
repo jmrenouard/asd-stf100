@@ -369,8 +369,11 @@ def resolve_templates_dir() -> Path | None:
     candidates = [
         script_path.parent.parent / "templates" / "fr" / "docs-as-code",
         script_path.parent.parent / "templates" / "docs-as-code",
-        script_path.parents[2] / "skills" / "diataxis-docs-fr" / "templates" / "docs-as-code",
     ]
+    if len(script_path.parents) > 2:
+        candidates.append(
+            script_path.parents[2] / "skills" / "diataxis-docs-fr" / "templates" / "docs-as-code"
+        )
     for candidate in candidates:
         # Ensure we do not accidentally pick up English templates when running inside diataxis-docs.
         if (candidate / "vale-styles" / "STF100" / "ModauxInterdits.yml").is_file():

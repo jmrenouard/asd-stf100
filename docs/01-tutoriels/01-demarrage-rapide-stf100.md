@@ -60,10 +60,13 @@ stf-check --mode procedural /tmp/procedure_test.md
 Résultat attendu (le code retour vaut `1`) :
 
 ```text
-ERROR   ... [rule 8.1] Semicolon ';' is not allowed...
-ERROR   ... [rule 3.2] Forbidden conditional/weak modal...
-ERROR   ... [rule 3.6] Passive voice with agent 'par'...
-ERROR   ... [rule 5.1] Procedural sentence exceeds 20 words...
+ERROR   /tmp/procedure_test.md:L3 [rule 5.1/6.3] sentence has 29 words (max 20): "..."
+ERROR   /tmp/procedure_test.md:L3 [rule 8.1] semicolon found: "...". Split into two sentences.
+ERROR   /tmp/procedure_test.md:L3 [rule 3.2] forbidden conditional or uncertainty word "pourrait": ...
+ERROR   /tmp/procedure_test.md:L3 [rule 3.2] forbidden conditional or uncertainty word "éventuellement": ...
+ERROR   /tmp/procedure_test.md:L3 [rule 3.6] passive voice with agent "est arrêté par": make the agent the subject.
+
+Result: 5 errors, 0 warnings.
 ```
 
 ## Étape 3 : Réécrire et valider en ASD-STF100
@@ -89,7 +92,9 @@ stf-check --mode procedural /tmp/procedure_test.md
 Résultat attendu (le code retour vaut `0`) :
 
 ```text
-Result: 0 error(s), 0 warning(s).
+Result: 0 errors, 0 warnings.
+The text obeys the ASD-STF100 structural rules verified by this linter.
+Manual review remains required to verify approved word meanings.
 ```
 
 ## Étape 4 : Nettoyer l'environnement d'essai
