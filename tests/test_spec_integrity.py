@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -113,11 +114,21 @@ def test_dictionary_json_integrity_and_counts() -> None:
         assert verb["meaning"].strip()
         assert verb["stf_example"].strip()
 
+    unapproved_tokens = set(unapproved_headwords)
+    for item in unapproved:
+        for form in item["forms"]:
+            unapproved_tokens.add(form.lower())
+
     for item in unapproved:
         assert len(item["alternatives"]) >= 1
         assert item["meaning"].strip()
         assert item["non_stf_example"].strip()
         assert item["stf_example"].strip()
+        for alt in item["alternatives"]:
+            for tok in re.findall(r"[A-Za-zÀ-ÖØ-öø-ÿŒœŸ]+", alt.lower()):
+                assert tok not in unapproved_tokens, (
+                    f"Unapproved entry {item['word']} suggests unapproved alternative '{alt}'"
+                )
 
 
 def test_spec_examples_are_stf_compliant() -> None:
@@ -132,11 +143,13 @@ def test_spec_examples_are_stf_compliant() -> None:
                 rep = Report()
                 check_text(ex["stf"], "descriptive", rep, f"rule-{rule['id']}", vocab)
                 assert not rep.errors, f"Rule {rule['id']} example failed: {rep.errors}"
+                assert not rep.warnings, f"Rule {rule['id']} example warned: {rep.warnings}"
 
     for entry in dict_data["entries"]:
         rep = Report()
         check_text(entry["stf_example"], "descriptive", rep, entry["word"], vocab)
         assert not rep.errors, f"Entry {entry['word']} example failed: {rep.errors}"
+        assert not rep.warnings, f"Entry {entry['word']} example warned: {rep.warnings}"
 
 
 def test_sync_docs_check_and_drift_detection(tmp_path: Path) -> None:

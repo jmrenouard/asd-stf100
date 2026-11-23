@@ -4605,6 +4605,20 @@
       "non_stf_example": ""
     },
     {
+      "word": "DISTANT",
+      "pos": "adj",
+      "approved": true,
+      "forms": [
+        "distante",
+        "distants",
+        "distantes"
+      ],
+      "meaning": "Situé à distance sur un autre serveur ou réseau.",
+      "alternatives": [],
+      "stf_example": "Coupez l'accès distant après la maintenance.",
+      "non_stf_example": ""
+    },
+    {
       "word": "DISTINCT",
       "pos": "adj",
       "approved": true,
@@ -4816,7 +4830,7 @@
       ],
       "meaning": "Anglicisme interdit.",
       "alternatives": [
-        "RETOUR À LA VERSION ANTÉRIEURE"
+        "RETOUR À LA VERSION PRÉCÉDENTE"
       ],
       "stf_example": "Revenez à la version 1.0.",
       "non_stf_example": "Faites un downgrade vers la 1.0."
@@ -4832,8 +4846,8 @@
       ],
       "meaning": "Anglicisme interdit.",
       "alternatives": [
-        "TÉLÉCHARGER",
-        "OBTENIR"
+        "OBTENIR",
+        "COPIER"
       ],
       "stf_example": "Obtenez le paquet d'installation.",
       "non_stf_example": "Downloadez le paquet d'installation."
@@ -7608,9 +7622,9 @@
       ],
       "meaning": "Verbe juridique engageant une responsabilité.",
       "alternatives": [
-        "ASSURER",
         "VÉRIFIER",
-        "MAINTENIR"
+        "MAINTENIR",
+        "PROTÉGER"
       ],
       "stf_example": "Vérifiez l'étanchéité du boîtier.",
       "non_stf_example": "Garantissez l'étanchéité du boîtier."
@@ -11214,7 +11228,7 @@
       "meaning": "Verbe lourd.",
       "alternatives": [
         "CAUSER",
-        "PROVOQUER"
+        "DÉCLENCHER"
       ],
       "stf_example": "Une surtension peut endommager la carte.",
       "non_stf_example": "Une surtension occasionne une panne."

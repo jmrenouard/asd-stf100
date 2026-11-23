@@ -8,7 +8,7 @@ Voir aussi : [Règles de rédaction](regles-redaction.md) | [Catégories techniq
 
 | Indicateur | Effectif |
 |---|---|
-| Entrées approuvées | 1018 |
+| Entrées approuvées | 1019 |
 | Verbes approuvés | 383 |
 | Mots non approuvés documentés | 274 |
 | Erreurs récurrentes | 46 |
@@ -277,6 +277,7 @@ Voir aussi : [Règles de rédaction](regles-redaction.md) | [Catégories techniq
 | `DISQUE` | n | disques | Support de stockage ou pièce circulaire plate. | Vérifiez l'espace libre sur le disque. |
 | `DISSOUDRE` | v | dissoudre | Mélanger un solide dans un liquide jusqu'à disparition. | Le solvant dissout les résidus d'adhésif. |
 | `DISTANCE` | n | distances | Longueur mesurée entre deux points. | Maintenez une distance de sécurité de 1 m. |
+| `DISTANT` | adj | distante, distants, distantes | Situé à distance sur un autre serveur ou réseau. | Coupez l'accès distant après la maintenance. |
 | `DISTINCT` | adj | distincte, distincts, distinctes | Nettement séparé d'un autre élément. | Utilisez deux fichiers distincts. |
 | `DISTRIBUER` | v | distribuez, distribue, distribuent, distribué, distribuée, distribués, distribuées, distribuera, distribueront | Répartir un fluide, une charge ou une énergie sur plusieurs voies. | Le collecteur distribue l'air sur quatre sorties. |
 | `DIVISER` | v | divisez, divise, divisent, divisé, divisée, divisés, divisées, divisera, diviseront | Partager une valeur ou un espace en parties égales. | Divisez la durée totale par le nombre de cycles. |
@@ -1133,8 +1134,8 @@ Voir aussi : [Règles de rédaction](regles-redaction.md) | [Catégories techniq
 | `DISSOCIER` | v | dissocie, dissociez, dissocient, dissocié | SÉPARER | Dissociez les câbles de mesure du secteur. | Séparez les câbles de mesure du secteur. |
 | `DIVERS` | adj | diverse, diverses | PLUSIEURS, PRÉCISER | Vérifiez divers paramètres. | Vérifiez la tension, le courant et le débit. |
 | `DORÉNAVANT` | adv | — | À PARTIR DE MAINTENANT, ENSUITE | Utilisez dorénavant la version 2. | Utilisez ensuite la version 2. |
-| `DOWNGRADE` | n | downgrades | RETOUR À LA VERSION ANTÉRIEURE | Faites un downgrade vers la 1.0. | Revenez à la version 1.0. |
-| `DOWNLOADER` | v | downloade, downloadez, downloadé | TÉLÉCHARGER, OBTENIR | Downloadez le paquet d'installation. | Obtenez le paquet d'installation. |
+| `DOWNGRADE` | n | downgrades | RETOUR À LA VERSION PRÉCÉDENTE | Faites un downgrade vers la 1.0. | Revenez à la version 1.0. |
+| `DOWNLOADER` | v | downloade, downloadez, downloadé | OBTENIR, COPIER | Downloadez le paquet d'installation. | Obtenez le paquet d'installation. |
 | `DROPER` | v | drope, dropez, dropé | SUPPRIMER, REJETER | Dropez la table temporaire. | Supprimez la table temporaire. |
 | `DYSFONCTIONNEMENT` | n | dysfonctionnements | PANNE, ANOMALIE, DÉFAUT | Signalez tout dysfonctionnement du relais. | Signalez toute panne du relais. |
 | `DÉBRANCHER` | v | débranche, débranchez, débranchent, débranché | DÉCONNECTER | Débranchez la prise réseau. | Déconnectez la prise réseau. |
@@ -1173,7 +1174,7 @@ Voir aussi : [Règles de rédaction](regles-redaction.md) | [Catégories techniq
 | `FIX` | n | fixs | CORRECTION, RÉGLAGE | Appliquez le fix réseau sur le routeur. | Appliquez la correction réseau sur le routeur. |
 | `FOURNITURE` | n | fournitures | ALIMENTATION, FOURNIR, PIÈCE | La fourniture d'air s'arrête. | L'alimentation en air s'arrête. |
 | `FRACTIONNER` | v | fractionne, fractionnez, fractionnent, fractionné | DIVISER | Fractionnez le fichier en blocs de 10 Mo. | Divisez le fichier en blocs de 10 Mo. |
-| `GARANTIR` | v | garantit, garantissez, garantissent, garanti | ASSURER, VÉRIFIER, MAINTENIR | Garantissez l'étanchéité du boîtier. | Vérifiez l'étanchéité du boîtier. |
+| `GARANTIR` | v | garantit, garantissez, garantissent, garanti | VÉRIFIER, MAINTENIR, PROTÉGER | Garantissez l'étanchéité du boîtier. | Vérifiez l'étanchéité du boîtier. |
 | `GENS` | n | — | PERSONNEL, PERSONNES | Empêchez les gens d'entrer dans la zone. | Interdisez l'accès à la zone. |
 | `HABILITER` | v | habilite, habilitez, habilitent, habilité | AUTORISER | Habilitez l'utilisateur à démarrer le service. | Autorisez l'utilisateur à démarrer le service. |
 | `HARDCODÉ` | adj | hardcodée, hardcodés, hardcodées | CODÉ EN DUR, FIXE | Supprimez tout secret hardcodé. | Supprimez tout secret fixe dans le code. |
@@ -1224,7 +1225,7 @@ Voir aussi : [Règles de rédaction](regles-redaction.md) | [Catégories techniq
 | `OBSERVER` | v | observe, observez, observent, observé, observée | REGARDER, EXAMINER, RESPECTER | Observez le voyant et observez la règle. | Regardez le voyant et respectez la règle. |
 | `OBSOLÈTE` | adj | obsolètes | ANCIEN, EXPIRÉ | Supprimez toute fonction obsolète. | Supprimez toute fonction expirée. |
 | `OBTENTION` | n | — | OBTENIR | Après obtention du jeton, lancez la requête. | Lorsque vous obtenez le jeton, lancez la requête. |
-| `OCCASIONNER` | v | occasionne, occasionnez, occasionnent, occasionné | CAUSER, PROVOQUER | Une surtension occasionne une panne. | Une surtension peut endommager la carte. |
+| `OCCASIONNER` | v | occasionne, occasionnez, occasionnent, occasionné | CAUSER, DÉCLENCHER | Une surtension occasionne une panne. | Une surtension peut endommager la carte. |
 | `OCTROYER` | v | octroie, octroyez, octroient, octroyé | DONNER, AUTORISER | Octroyez les droits d'écriture au compte. | Autorisez l'accès en écriture pour le compte. |
 | `OPPORTUNITÉ` | n | opportunités | OCCASION, POSSIBILITÉ | Saisissez cette opportunité de mise à jour. | Utilisez cette fenêtre pour mettre le système à jour. |
 | `OPTER` | v | opte, optez, optent, opté | CHOISIR, SÉLECTIONNER | Optez pour le mode silencieux. | Choisissez le mode silencieux. |

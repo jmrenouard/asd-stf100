@@ -70,6 +70,7 @@ NON_VERB_ANT: set[str] = DEFAULT_APPROVED_ANT | {
     "tranchant",
     "brillant",
     "pertinent",
+    "distant",
 }
 
 # Non-gerund nouns/prepositions that can legitimately follow "en".
@@ -142,11 +143,18 @@ PROCEDURAL_MODALS_RE = re.compile(
     re.IGNORECASE,
 )
 
-# Rule 3.6: passive voice with explicit agent ("est/sont/... + participle + par").
+# Rule 3.6: passive voice with explicit agent ("est/sont/... + participle + par"),
+# excluding fixed non-agent adverbial complements after "par".
 _IRREG_PP_FR = r"(?:fait|écrit|mis|pris|compris|construit|détruit|produit|ouvert|couvert|remis|transmis)e?s?"
+_NON_AGENT_PAR = (
+    r"défaut|exemple|seconde|minute|heure|jour|mois|an|conception|construction|"
+    r"précaution|sécurité|erreur|hasard|inadvertance|contre|conséquent|ailleurs|"
+    r"avance|la\s+suite|rapport"
+)
 PASSIVE_AGENT_RE = re.compile(
     rf"{_BOUND_LEFT}(?:est|sont|était|étaient|sera|seront|a\s+été|ont\s+été)\s+"
-    rf"([{_FR_LETTER}]{{2,}}[éiu]e?s?|{_IRREG_PP_FR})\s+par{_BOUND_RIGHT}",
+    rf"([{_FR_LETTER}]{{2,}}[éiu]e?s?|{_IRREG_PP_FR})\s+par{_BOUND_RIGHT}"
+    rf"(?!\s+(?:{_NON_AGENT_PAR}){_BOUND_RIGHT})",
     re.IGNORECASE,
 )
 
@@ -623,7 +631,7 @@ def check_text(
             line_no = start_line + offset
             if bullet.match(line):
                 items.append((line_no, line))
-            elif items and re.match(r"^(?:  |\t)\S", line):
+            elif items and re.match(r"^(?: {2,}|\t)\S", line):
                 prev_ln, prev_text = items[-1]
                 items[-1] = (prev_ln, prev_text + " " + line.strip())
             else:

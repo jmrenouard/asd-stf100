@@ -123,17 +123,38 @@ def test_grammar_and_style_rules() -> None:
 
 
 def test_false_positive_guards() -> None:
-    """Verify non-participles, approved -ant words, and HTML entities do not trigger false positives."""
+    """Verify non-participles, non-agent 'par' phrases, approved -ant words, and entities pass."""
     vocab = load_dictionary(SPEC_DICT)
     rep = Report()
     clean_text = (
         "Ouvrez l'armoire pendant le cycle suivant.\n\n"
         "Le voyant courant reste allumé devant le composant isolant.\n\n"
+        "Coupez l'accès distant après la maintenance.\n\n"
+        "Ce port est ouvert par défaut.\n\n"
+        "Le journal est activé par défaut.\n\n"
+        "Le paramètre est défini par exemple à 10.\n\n"
+        "La pompe est réglée par seconde.\n\n"
         "Le fichier est ici par conception&nbsp;et reste valide.\n"
     )
     check_text(clean_text, "descriptive", rep, "ok.md", vocab)
     assert not rep.errors, rep.errors
     assert not rep.warnings, rep.warnings
+
+
+def test_wrapped_list_items_enforce_rule_5_1() -> None:
+    """Verify 3-space and 4-space wrapped list items still obey the 20-word procedural limit."""
+    rep = Report()
+    wrapped_numbered = (
+        "1. Ouvrez le coffret principal puis vérifiez tous les câbles de puissance "
+        "et les borniers\n"
+        "   avant de lancer le redémarrage complet du serveur secondaire.\n\n"
+        "- Vérifiez la tension d'entrée sur la borne positive puis serrez les vis "
+        "avec une clé\n"
+        "    dynamométrique de 10 mm avant le test.\n"
+    )
+    check_text(wrapped_numbered, "procedural", rep, "wrapped.md", vocab=None)
+    rule_5_1_errors = [loc for loc, rule, _ in rep.errors if rule == "5.1"]
+    assert len(rule_5_1_errors) == 2, rep.errors
 
 
 def test_dictionary_checks_and_elisions() -> None:
