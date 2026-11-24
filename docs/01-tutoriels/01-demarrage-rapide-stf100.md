@@ -60,13 +60,20 @@ stf-check --mode procedural /tmp/procedure_test.md
 Résultat attendu (le code retour vaut `1`) :
 
 ```text
-ERROR   /tmp/procedure_test.md:L3 [rule 5.1/6.3] sentence has 29 words (max 20): "..."
-ERROR   /tmp/procedure_test.md:L3 [rule 8.1] semicolon found: "...". Split into two sentences.
-ERROR   /tmp/procedure_test.md:L3 [rule 3.2] forbidden conditional or uncertainty word "pourrait": ...
-ERROR   /tmp/procedure_test.md:L3 [rule 3.2] forbidden conditional or uncertainty word "éventuellement": ...
+ERROR   /tmp/procedure_test.md:L3 [rule 5.1/6.3] sentence has 29 words (max 20): "Il conviendrait de redémarrer le serveur applicatif ; cet..."
+ERROR   /tmp/procedure_test.md:L3 [rule 8.1] semicolon found: "Il conviendrait de redémarrer le serveur applicatif ; cet...". Split into two sentences.
+ERROR   /tmp/procedure_test.md:L3 [rule 3.2] forbidden conditional or uncertainty word "pourrait": use direct mood or explicit condition.
+ERROR   /tmp/procedure_test.md:L3 [rule 3.2] forbidden conditional or uncertainty word "éventuellement": use direct mood or explicit condition.
 ERROR   /tmp/procedure_test.md:L3 [rule 3.6] passive voice with agent "est arrêté par": make the agent the subject.
+WARNING /tmp/procedure_test.md:L3 [rule 1.1] unapproved word "pourrait": use POUVOIR (PRÉSENT) (entry POURRAIT).
+WARNING /tmp/procedure_test.md:L3 [rule 1.1] unapproved word "éventuellement": use SI NÉCESSAIRE, SUPPRIMER (entry ÉVENTUELLEMENT).
+WARNING /tmp/procedure_test.md:L3 [rule 1.1] unapproved word "prévenir": use AVERTIR, EMPÊCHER (entry PRÉVENIR).
 
-Result: 5 errors, 0 warnings.
+CHECK   5 words are not in the approved dictionary.
+        Each must be an approved technical noun (22 categories) or technical verb (4 categories):
+        conviendrait, applicatif, corrompre, session, administrateur
+
+Result: 5 errors, 3 warnings.
 ```
 
 ## Étape 3 : Réécrire et valider en ASD-STF100

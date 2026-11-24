@@ -51,7 +51,7 @@ Voir aussi : [Règles de rédaction](regles-redaction.md) | [Remplacements et ca
 | `ACTION` | n | actions | Opération exécutée par un opérateur ou un équipement. | Une seule action figure dans chaque phrase. |
 | `ACTIONNER` | v | actionnez, actionne, actionnent, actionné, actionnée, actionnés, actionnées, actionnera, actionneront | Mettre en mouvement un levier, une commande ou un mécanisme. | Actionnez le levier de purge. |
 | `ACTIVER` | v | activez, active, activent, activé, activée, activés, activées, activera, activeront | Mettre en service une fonction, un module ou un circuit. | Activez la surveillance du serveur. |
-| `ACTUEL` | adj | actuele, actuels, actueles | Qui correspond à l'état présent du système. | Enregistrez la configuration actuelle. |
+| `ACTUEL` | adj | actuelle, actuels, actuelles | Qui correspond à l'état présent du système. | Enregistrez la configuration actuelle. |
 | `ADAPTER` | v | adaptez, adapte, adaptent, adapté, adaptée, adaptés, adaptées, adaptera, adapteront | Ajuster un élément à une configuration précise. | Adaptez la vitesse de rotation au régime nominal. |
 | `ADDITIONNER` | v | additionnez, additionne, additionnent, additionné, additionnée, additionnés, additionnées, additionnera, additionneront | Ajouter une valeur numérique à une autre valeur. | Additionnez les deux débits mesurés. |
 | `ADHÉRER` | v | adhérez, adhère, adhèrent, adhéré, adhérera, adhéreront | Rester solidement fixé sur une surface par collage. | La bande adhère sur la tôle propre. |
@@ -627,7 +627,7 @@ Voir aussi : [Règles de rédaction](regles-redaction.md) | [Remplacements et ca
 | `OPTION` | n | options | Paramètre facultatif ou choix d'exécution. | Activez l'option strict. |
 | `OPÉRATEUR` | n | opérateurs | Personne exécutant une procédure technique. | L'opérateur porte des gants isolants. |
 | `OPÉRATION` | n | opérations | Action ou suite d'actions exécutées sur un système. | Consignez chaque opération exécutée. |
-| `OPÉRATIONNEL` | adj | opérationnele, opérationnels, opérationneles | Prêt à assurer son service normal. | Le serveur redevient opérationnel. |
+| `OPÉRATIONNEL` | adj | opérationnelle, opérationnels, opérationnelles | Prêt à assurer son service normal. | Le serveur redevient opérationnel. |
 | `OPÉRER` | v | opérez, opère, opèrent, opéré, opérée, opérés, opérées, opérera, opéreront | Faire fonctionner un dispositif dans ses limites nominales. | L'unité opère entre 5 °C et 40 °C. |
 | `ORANGE` | adj | oranges | De couleur orange. | Le voyant orange indique un avertissement. |
 | `ORDONNER` | v | ordonnez, ordonne, ordonnent, ordonné, ordonnée, ordonnés, ordonnées, ordonnera, ordonneront | Ranger des éléments selon une séquence précise. | Ordonnez les étapes selon l'ordre d'exécution. |

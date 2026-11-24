@@ -52,12 +52,10 @@ docker exec lab-node-1 patronictl -c /etc/patroni/patroni.yml list
 Résultat attendu :
 
 ```text
-+ Cluster: sandbox-ha (7310000000000000001) ---+-----------+----+-----------+
-| Member     | Host       | Role    | State     | TL | Lag in MB |
-+------------+------------+---------+-----------+----+-----------+
-| lab-node-1 | 172.28.0.2 | Leader  | running   |  1 |           |
-| lab-node-2 | 172.28.0.3 | Replica | streaming |  1 |         0 |
-+------------+------------+---------+-----------+----+-----------+
+Cluster     Member      Host        Role     State      TL  Lag in MB
+----------  ----------  ----------  -------  ---------  --  ---------
+sandbox-ha  lab-node-1  172.28.0.2  Leader   running     1
+sandbox-ha  lab-node-2  172.28.0.3  Replica  streaming   1          0
 ```
 
 Constatez que `lab-node-1` détient le rôle `Leader` pendant que `lab-node-2` réplique les données en flux continu.
@@ -75,11 +73,9 @@ docker exec lab-node-2 patronictl -c /etc/patroni/patroni.yml list
 Résultat attendu :
 
 ```text
-+ Cluster: sandbox-ha (7310000000000000001) ---+-----------+----+-----------+
-| Member     | Host       | Role    | State     | TL | Lag in MB |
-+------------+------------+---------+-----------+----+-----------+
-| lab-node-2 | 172.28.0.3 | Leader  | running   |  2 |           |
-+------------+------------+---------+-----------+----+-----------+
+Cluster     Member      Host        Role    State    TL  Lag in MB
+----------  ----------  ----------  ------  -------  --  ---------
+sandbox-ha  lab-node-2  172.28.0.3  Leader  running   2
 ```
 
 Le nœud `lab-node-2` est maintenant `Leader` sur la timeline `2`.
