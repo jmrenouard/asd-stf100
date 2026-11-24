@@ -92,7 +92,7 @@ Copiez ces deux dossiers dans votre répertoire global de skills (par exemple `~
 - **Synchroniser les fichiers générés depuis `spec/*.json` :** `python scripts/sync_docs.py` (vérification en CI : `python scripts/sync_docs.py --check`).
 - **Compiler la norme PDF :** `python scripts/build_pdf.py --output dist/ASD-STF100_ISSUE1.pdf`.
 - **Exécuter la suite de tests complète :** `pytest -v`.
-- **Pipeline CI :** `.github/workflows/ci.yml` (tests, synchronisation, Diátaxis + STF, build PDF) et `.github/workflows/docs-ci.yml` (validation documentaire, markdownlint, Vale `STF100`, `mkdocs build --strict`).
+- **Pipeline CI :** `.github/workflows/ci.yml` (tests, synchronisation, Diátaxis + STF, build PDF), `.github/workflows/docs-ci.yml` (validation documentaire, markdownlint, Vale `STF100`, `mkdocs build --strict`) et `.github/workflows/docs-publish.yml` (compilation et publication MkDocs versionnée sur IONOS).
 
 ---
 

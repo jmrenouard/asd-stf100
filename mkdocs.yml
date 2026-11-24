@@ -13,6 +13,12 @@ exclude_docs: |
   *.log
   .env
   .env.*
+  en/
+  01-tutorials/
+  02-how-to-guides/
+  04-explanation/
+  *_en.md
+  *.en.md
 
 hooks:
   - scripts/mkdocs_hooks.py
