@@ -1174,3 +1174,55 @@ def test_gitignore_pyproject_and_requirements_docs_configuration() -> None:
     pyproject_text = PYPROJECT_PATH.read_text(encoding="utf-8")
     assert "docs =" in pyproject_text or "docs=" in pyproject_text
     assert "pyyaml" in pyproject_text.lower()
+
+
+def test_mkdocs_fr_only_language_separation_and_rendered_html(tmp_path: Path) -> None:
+    """Verify FR-only MkDocs exclusions, scaffold Mermaid superfences, and built HTML lang attributes."""
+    config = _load_mkdocs_config()
+    assert config.get("theme", {}).get("language") == "fr"
+
+    raw_exclude = config.get("exclude_docs", "")
+    exclude_text = "\n".join(raw_exclude) if isinstance(raw_exclude, list) else str(raw_exclude)
+    for en_pattern in ("en/", "01-tutorials/", "02-how-to-guides/", "04-explanation/", "*_en.md", "*.en.md"):
+        assert en_pattern in exclude_text, f"exclude_docs missing defensive EN exclusion: {en_pattern}"
+
+    nav_paths = _flatten_nav_paths(config.get("nav", []))
+    en_pattern_re = re.compile(r"(?:^|/)(?:en|01-tutorials|02-how-to-guides|04-explanation)(?:/|$)|(?:_en|-en|\.en)\.md$")
+    assert not [p for p in nav_paths if en_pattern_re.search(p)]
+
+    scaffold_script = (REPO_ROOT / "src" / "asd_stf100" / "scaffold_diataxis_fr.py").read_text(encoding="utf-8")
+    template_mkdocs = (
+        REPO_ROOT / "skills" / "diataxis-docs-fr" / "templates" / "docs-as-code" / "mkdocs.yml"
+    ).read_text(encoding="utf-8")
+    assert "name: mermaid" in scaffold_script
+    assert "name: mermaid" in template_mkdocs
+
+    if not _has_mkdocs_material():
+        pytest.skip("mkdocs and mkdocs-material are not installed in current test environment")
+
+    site_dir = tmp_path / "strict_fr_site"
+    proc = subprocess.run(
+        [sys.executable, "-m", "mkdocs", "build", "--strict", "-d", str(site_dir)],
+        cwd=str(REPO_ROOT),
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        check=False,
+    )
+    assert proc.returncode == 0, proc.stdout + "\n" + proc.stderr
+
+    html_files = sorted(site_dir.rglob("*.html"))
+    assert len(html_files) >= 25
+    for html_file in html_files:
+        rel_html = html_file.relative_to(site_dir).as_posix()
+        assert not en_pattern_re.search(rel_html), f"Unexpected EN directory/file in built FR site: {rel_html}"
+        head = html_file.read_text(encoding="utf-8", errors="replace")[:1024]
+        lang_match = re.search(r'<html[^>]+lang=["\']([A-Za-z-]+)["\']', head)
+        assert lang_match and lang_match.group(1).lower().split("-")[0] == "fr", (
+            f"Built HTML {rel_html} did not declare lang='fr'"
+        )
+
+    adr_html = (site_dir / "04-explications" / "adr-001-adaptation-francaise" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    assert 'class="mermaid"' in adr_html
